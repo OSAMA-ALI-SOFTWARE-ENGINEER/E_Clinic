@@ -1,8 +1,9 @@
-import hero from "../assets/images/hero.png"
+import hero from "../assets/images/hero.png";
 
+import Card from "../ui/Card";
+import Card2 from "../ui/Card2";
 function Home() {
   return (
-    <>
     <div className="w-full flex  h-screen pt-1 bg-zinc-200">
       <div className="textstructure  mt-52 px-20">
         {["We Provide ", "Disease's", "Different Solution"].map(
@@ -15,7 +16,7 @@ function Home() {
               </div>
             );
           }
-          )}
+        )}
       </div>
       <div className="container flex w-1/3 ">
        
