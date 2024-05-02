@@ -1,5 +1,7 @@
-import hero from "../assets/images/hero.png"
+import hero from "../assets/images/hero.png";
 
+import Card from "../ui/Card";
+import Card2 from "../ui/Card2";
 function Home() {
   return (
     <div className="w-full flex  h-screen pt-1 bg-zinc-200">
@@ -21,6 +23,7 @@ function Home() {
         <img className=" " src={hero} alt="" />
         </div>
     </div>
+    
   );
 }
 

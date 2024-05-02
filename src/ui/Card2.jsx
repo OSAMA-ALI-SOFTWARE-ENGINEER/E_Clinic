@@ -1,8 +1,8 @@
 import React from "react";
 
-const Card = () => {
+const Card2 = () => {
   return (
-    <div className="card bg-base-100 shadow-xl image-full">
+    <div className="card bg-base-100 shadow-xl">
       <figure>
         <img
           src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
@@ -20,6 +20,4 @@ const Card = () => {
   );
 };
 
-
-
-export default Card;
+export default Card2;
