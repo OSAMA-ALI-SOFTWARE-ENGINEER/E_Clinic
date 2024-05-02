@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './components/Home';
-import Disease from './components/Disease';
-import Treatment from './components/Treatment';
-import About from './components/About';
-import Contact from './components/Contact';
+import Home from './pages/Home';
+import Disease from './pages/Disease';
+import Treatment from './pages/Treatment';
+import About from './pages/About';
+import Contact from './pages/Contact';
 import Footer from './components/Footer';
 import Header from './components/Header';
 
