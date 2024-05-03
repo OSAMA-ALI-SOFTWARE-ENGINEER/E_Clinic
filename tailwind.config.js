@@ -5,6 +5,7 @@ export default {
     extend: {
       fontFamily: {
         primary: ["Poppins", "sans-serif"],
+        secondary: ["Inter", "sans-serif"],
       },
       backgroundImage: {
         articleBg: "url('/article.jpg')",

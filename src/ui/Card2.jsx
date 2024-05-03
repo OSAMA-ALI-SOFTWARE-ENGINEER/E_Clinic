@@ -3,10 +3,11 @@ import React from "react";
 const Card2 = () => {
   return (
     <div className="card bg-base-100 shadow-xl">
-      <figure>
+      <figure className="p-3">
         <img
           src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
           alt="Shoes"
+          className="rounded-md"
         />
       </figure>
       <div className="card-body">
