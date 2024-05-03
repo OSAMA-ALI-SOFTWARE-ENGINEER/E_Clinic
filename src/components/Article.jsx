@@ -1,9 +1,10 @@
 import React from "react";
 import CardArticle from "../ui/CardArticle";
 
-const Article = () => {
+
+const Article = (props) => {
   return (
-    <div className=" my-12 flex flex-col gap-6 px-4">
+    <div className=" my-12 flex flex-col gap-6">
       <h2 className=" relative min-h-40 bg-[url('/article.jpg')] bg-cover bg-bottom bg-no-repeat text-center font-primary text-3xl font-semibold capitalize">
         <span className=" absolute left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%] font-primary text-5xl">
           Article
@@ -15,6 +16,8 @@ const Article = () => {
           <CardArticle key={i} />
         ))}
       </div>
+
+  
     </div>
   );
 };
