@@ -1,13 +1,17 @@
-import Card from "../ui/Card";
+import React from 'react'
+import Title_section from '../ui/Title_section'
+import T_card from '../ui/T_card'
 
-function treatment() {
+function Treatment() {
   return (
-    <div className=" grid grid-cols-3 gap-4 mt-8">
-      {[...new Array(5)]?.map((_, i) => (
-        <Card key={i} />
-      ))}
+    <div>
+      <Title_section/>
+      <T_card/>
+      <T_card/>
+      <T_card/>
+
     </div>
-  );
+  )
 }
 
-export default treatment;
+export default Treatment

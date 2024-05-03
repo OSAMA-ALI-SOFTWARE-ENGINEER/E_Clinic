@@ -3,3 +3,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .maxWmd {
+        max-width: 100%;
+    }
+}
+
+/* Background Image for Primary Care Div */
+.primaryCare {
+    background-image: url('path/to/your/image.jpg');
+    background-size: cover;
+    background-position: center;
+}
