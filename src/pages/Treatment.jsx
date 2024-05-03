@@ -1,17 +1,18 @@
-import React from 'react'
-import Title_section from '../ui/Title_section'
-import T_card from '../ui/T_card'
+import React from "react";
+import Title_section from "../ui/Title_section";
+import Tcard from "../ui/Tcard";
+import SearchBox from "../ui/SearchBox";
 
 function Treatment() {
   return (
     <div>
-      <Title_section/>
-      <T_card/>
-      <T_card/>
-      <T_card/>
-
+      <SearchBox />
+      <Title_section />
+      <Tcard />
+      <Tcard />
+      <Tcard />
     </div>
-  )
+  );
 }
 
-export default Treatment
+export default Treatment;
