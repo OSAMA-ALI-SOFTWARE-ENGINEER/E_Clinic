@@ -1,12 +1,13 @@
 import React from "react";
 import Title_section from "../ui/Title_section";
 import Tcard from "../ui/Tcard";
-import SearchBox from "../ui/SearchBox";
+
+import TreatmentFilterSection from "../components/TreatementFilterSection/TreatmentFilterSectionMain";
 
 function Treatment() {
   return (
     <div>
-      <SearchBox />
+      <TreatmentFilterSection />
       <Title_section />
       <Tcard />
       <Tcard />
