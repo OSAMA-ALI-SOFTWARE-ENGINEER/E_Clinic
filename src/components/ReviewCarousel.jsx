@@ -1,7 +1,10 @@
 import React from "react";
 
 const ReviewCarousel = () => {
-  return <div>ReviewCarousel</div>;
+  return <div>
+    
+    
+  </div>;
 };
 
 export default ReviewCarousel;
