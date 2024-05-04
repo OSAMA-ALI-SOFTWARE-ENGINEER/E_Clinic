@@ -19,82 +19,70 @@ const buttonsAlphabets = [
     name: "E",
   },
   {
-    name: "A",
+    name: "F",
   },
   {
-    name: "A",
+    name: "G",
   },
   {
-    name: "A",
+    name: "H",
   },
   {
-    name: "A",
+    name: "I",
   },
   {
-    name: "A",
+    name: "J",
   },
   {
-    name: "A",
+    name: "K",
   },
   {
-    name: "A",
+    name: "L",
   },
   {
-    name: "A",
+    name: "M",
   },
   {
-    name: "A",
+    name: "N",
   },
   {
-    name: "A",
+    name: "O",
   },
   {
-    name: "A",
+    name: "P",
   },
   {
-    name: "A",
+    name: "Q",
   },
   {
-    name: "A",
+    name: "R",
   },
   {
-    name: "A",
+    name: "S",
   },
   {
-    name: "A",
+    name: "T",
   },
   {
-    name: "A",
+    name: "U",
   },
   {
-    name: "A",
+    name: "V",
   },
   {
-    name: "A",
+    name: "W",
   },
   {
-    name: "A",
+    name: "X",
   },
   {
-    name: "A",
+    name: "Y",
   },
   {
-    name: "A",
+    name: "Z",
   },
   {
-    name: "A",
-  },
-  {
-    name: "A",
-  },
-  {
-    name: "A",
-  },
-  {
-    name: "A",
-  },
-  {
-    name: "A",
+    name: "#",
   },
 ];
 
