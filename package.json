@@ -15,9 +15,14 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@headlessui/react": "^1.7.19",
     "@heroicons/react": "^2.1.3",
+    "@supabase/supabase-js": "^2.43.1",
+    "@tanstack/react-query": "^5.34.2",
+    "@tanstack/react-query-devtools": "^5.34.2",
     "latest-version": "^9.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.51.4",
+    "react-quill": "^2.0.0",
     "react-router-dom": "^6.23.0"
   },
   "devDependencies": {

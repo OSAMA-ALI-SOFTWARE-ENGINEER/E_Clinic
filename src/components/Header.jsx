@@ -3,6 +3,7 @@ import React from "react";
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Link } from "react-router-dom";
 
 const links = [
   { to: "/", name: "Home" },
@@ -51,10 +52,16 @@ const Header = () => {
             </a>
           ))}
         </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+        <div className="hidden items-center gap-4 lg:flex lg:flex-1 lg:justify-end">
+          <Link
+            className=" rounded-sm bg-cyan-400 px-4 py-2 font-primary font-medium capitalize text-cyan-900 shadow-lg duration-200 hover:shadow-none active:scale-90"
+            to={"/add-disease"}
+          >
+            Add new Disease
+          </Link>
           <a
             href="#"
-            className="flex text-sm items-center justify-center bg-cyan-300 rounded-lg w-24  hover:bg-cyan-500 h-9 font-semibold leading-6 text-gray-900"
+            className="flex h-9 w-24 items-center justify-center rounded-lg bg-cyan-300  text-sm font-semibold leading-6 text-gray-900 hover:bg-cyan-500"
           >
             Subscribe <span aria-hidden="true">&rarr;</span>
           </a>
