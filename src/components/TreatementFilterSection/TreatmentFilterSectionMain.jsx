@@ -6,7 +6,7 @@ import { useDiasease } from "./useDiseases";
 
 const TreatmentFilterSection = () => {
   const [btnContent, setBtnContent] = useState("");
-
+  const [show, setShow] = useState(false);
   const { Diseases, isLoading, isError } = useDiasease();
 
   if (isLoading) return <p>Loading....</p>;
@@ -37,8 +37,19 @@ const TreatmentFilterSection = () => {
             Diseases?.map((item) => {
               return (
                 <div className="" key={item.id}>
-                  <h2 className="text-xl font-bold">{item.name}</h2>
-                  <div dangerouslySetInnerHTML={{ __html: item.content }} />
+                  <div className="collapse collapse-arrow bg-base-200">
+                    <input
+                      type="radio"
+                      name="my-accordion-2"
+                      // onClick={() => setShow((show) => !show)}
+                    />
+                    <div className="collapse-title text-xl font-medium">
+                      <h2 className="text-xl font-bold">{item.name}</h2>
+                    </div>
+                    <div className="collapse-content">
+                      <div dangerouslySetInnerHTML={{ __html: item.content }} />
+                    </div>
+                  </div>
                 </div>
               );
             })
@@ -50,3 +61,7 @@ const TreatmentFilterSection = () => {
 };
 
 export default TreatmentFilterSection;
+
+{
+  /* <div dangerouslySetInnerHTML={{ __html: item.content }} />; */
+}

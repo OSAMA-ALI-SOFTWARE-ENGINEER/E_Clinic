@@ -1,14 +1,17 @@
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { addDisease as addDiseaseApi } from "../../services/apiDisease";
+import toast from "react-hot-toast";
 
 export function useAddDisease() {
+  const queryClient = useQueryClient();
   const { mutate: addDisease, isPending: isAdding } = useMutation({
     mutationFn: (newdisease) => addDiseaseApi(newdisease),
     onSuccess: () => {
-      alert(" disease added successfully.");
+      queryClient.invalidateQueries({ queryKey: ["Diseases"] });
+      toast.success(" Disease added successfully.");
     },
     onError: (err) => {
-      alert(err?.message);
+      toast.error(err?.message);
     },
   });
 

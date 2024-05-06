@@ -1,7 +1,10 @@
 import { supabase } from "../../supabase";
 
 export async function getDiseases() {
-  let { data: Diseases, error } = await supabase.from("Disease").select("*");
+  let { data: Diseases, error } = await supabase
+    .from("Disease")
+    .select("*")
+    .order("id", { ascending: true });
 
   if (error) {
     console.log(error);
@@ -22,4 +25,13 @@ export async function addDisease(newDisease) {
   }
 
   return data;
+}
+
+export async function deleteDisease(id) {
+  const { error } = await supabase.from("Disease").delete().eq("id", id);
+
+  if (error) {
+    console.log(error);
+    throw new Error("Failed to delete disease. Try again later.");
+  }
 }
