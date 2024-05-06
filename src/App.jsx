@@ -13,7 +13,6 @@ import AddDisease from "./pages/AddDisease";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 
-
 const App = () => {
   const queryClient = new QueryClient({
     defaultOptions: {
@@ -35,7 +34,7 @@ const App = () => {
           <Route path="/Contact" element={<Contact />} />
           <Route path="/add-disease" element={<AddDisease />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
+          {/* <Route path="/signup" element={<Signup />} /> */}
         </Routes>
         <Footer />
       </BrowserRouter>
