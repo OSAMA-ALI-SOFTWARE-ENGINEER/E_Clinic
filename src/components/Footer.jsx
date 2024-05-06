@@ -9,9 +9,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Footer = () => {
   return (
+    <>
     <footer className="footer p-10 bg-base-200 text-base-content">
       <aside>
-       <img src="./Logo.png" alt="logo" />
+       <img className="w-52 h-5" src="./Logo.png" alt="logo" />
         <p>
           ACME Industries Ltd.
           <br />
@@ -39,6 +40,17 @@ const Footer = () => {
         <a className="link link-hover">Cookie policy</a>
       </nav>
     </footer>
+      <div className="flex flex-col items-center justify-center mt-10">
+        <div className="text-center text-grey-200 text-lg ">
+          Developed and Design For FYP
+        <div>
+          
+
+        </div>
+
+        </div>
+        </div>
+        </>
   );
 };
 

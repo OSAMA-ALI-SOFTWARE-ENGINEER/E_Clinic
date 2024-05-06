@@ -10,6 +10,9 @@ import Header from "./components/Header";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import AddDisease from "./pages/AddDisease";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+
 
 const App = () => {
   const queryClient = new QueryClient({
@@ -31,6 +34,8 @@ const App = () => {
           <Route path="/About" element={<About />} />
           <Route path="/Contact" element={<Contact />} />
           <Route path="/add-disease" element={<AddDisease />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
         </Routes>
         <Footer />
       </BrowserRouter>
