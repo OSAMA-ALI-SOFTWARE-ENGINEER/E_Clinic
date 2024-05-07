@@ -27,17 +27,17 @@ const AddDisease = () => {
   }
 
   return (
-    <div className=" flex items-center justify-center bg-gradient-to-br from-cyan-300 to-cyan-600 p-8 text-cyan-950">
+    <div className=" flex items-center justify-center bg-gradient-to-br from-stone-300 to-cyan-200 p-8 text-cyan-950">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className=" flex max-w-[80%] flex-col gap-4 rounded-md p-6 font-primary shadow-xl"
+        className=" flex max-w-[80%] flex-col gap-4 rounded-md p-6 font-primary shadow-xl bg-slate-200"
       >
         <FormRow lable={"Disease name"} error={errors?.name?.message}>
           <input
             disabled={isAdding}
             type="text"
             placeholder="Enter Blog title"
-            className={`h-12 w-full rounded-lg border-gray-700 bg-cyan-400 p-4 text-cyan-900 shadow-lg outline-none outline-offset-2 placeholder:text-cyan-600 focus-visible:border-b-transparent disabled:cursor-not-allowed disabled:bg-cyan-500 sm:w-3/4`}
+            className={`h-12 w-full rounded-lg border-gray-700 bg-base-100 p-4 text-stone-900 shadow-lg outline-none outline-offset-2 placeholder:text-cyan-600 focus-visible:border-b-transparent disabled:cursor-not-allowed disabled:bg-cyan-500 sm:w-3/4`}
             {...register("name", {
               required: "Field is required.",
             })}
@@ -55,7 +55,7 @@ const AddDisease = () => {
                 value={field.value}
                 
                 onChange={(value) => field.onChange(value)}
-                className=" rounded-xl border-none bg-cyan-400 shadow-xl outline-none disabled:cursor-not-allowed disabled:bg-cyan-500"
+                className=" rounded-xl border-none bg-base-100 shadow-xl outline-none disabled:cursor-not-allowed disabled:bg-cyan-500"
               />
             )}
           />
@@ -65,7 +65,7 @@ const AddDisease = () => {
           <input
             disabled={isAdding}
             type="file"
-            className=" file-input file-input-info bg-cyan-400 shadow-xl"
+            className=" file-input file-input-info bg-base-100 shadow-xl"
 
             // {...register("blogImage", {
             //   required: "Field is required.",
@@ -76,13 +76,20 @@ const AddDisease = () => {
             // })}
           />
         </FormRow>
-        <div className=" mt-6">
+        <div className=" flex gap-2 mt-6">
           <button
             disabled={isAdding}
             className="text-bodyColor disabled:text-bodyColor btn flex min-w-[8rem] items-center justify-center border-none bg-cyan-400 font-semibold uppercase hover:scale-95 hover:bg-cyan-600 disabled:cursor-not-allowed disabled:bg-sky-500 disabled:opacity-60"
             type="submit"
           >
             submit
+          </button>
+          <button
+            // disabled={isAdding}
+            className="text-bodyColor disabled:text-bodyColor btn flex min-w-[8rem] items-center justify-center border-none bg-cyan-400 font-semibold uppercase hover:scale-95 hover:bg-cyan-600 disabled:cursor-not-allowed disabled:bg-sky-500 disabled:opacity-60"
+            type="reset"
+          >
+            Cancel
           </button>
         </div>
       </form>

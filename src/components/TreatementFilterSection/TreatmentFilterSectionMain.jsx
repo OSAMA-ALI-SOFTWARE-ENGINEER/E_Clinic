@@ -47,7 +47,88 @@ const TreatmentFilterSection = () => {
                       <h2 className="text-xl font-bold">{item.name}</h2>
                     </div>
                     <div className="collapse-content">
-                      <div dangerouslySetInnerHTML={{ __html: item.content }} />
+                      {/* <div dangerouslySetInnerHTML={{ __html: item.content }} /> */}
+                     
+                     
+                      {/* Tabs start here */}
+                      <div role="tablist" className="tabs tabs-lifted">
+                        {/* Overview Tab */}
+                        <input
+                          type="radio"
+                          name="my_tabs_2"
+                          role="tab"
+                          className="tab"
+                          aria-label="Overview"
+                          checked
+                        />
+                        <div
+                          role="tabpanel"
+                          aria-label="Symptoms"
+                          className="tab-content rounded-box border-red-300 bg-base-100 p-6"
+                          dangerouslySetInnerHTML={{ __html: item.content }}
+                        />
+
+                        {/* Symptoms Tab */}
+                        <input
+                          type="radio"
+                          name="my_tabs_2"
+                          role="tab"
+                          className="tab"
+                          aria-label="Symptoms"
+                          
+                        />
+                        <div
+                          role="tabpanel"
+                          className="tab-content rounded-box border-red-300 bg-base-100 p-6"
+                        >
+                          Symptoms
+                        </div>
+                        {/* Causes Tab */}
+                        <input
+                          type="radio"
+                          name="my_tabs_2"
+                          role="tab"
+                          className="tab"
+                          aria-label="Causes"
+                        />
+                        <div
+                          role="tabpanel"
+                          className="tab-content rounded-box border-red-300 bg-base-100 p-6"
+                        >
+                         Causes
+                        </div>
+
+                        {/* Prevention Tab */}
+                        <input
+                          type="radio"
+                          name="my_tabs_2"
+                          role="tab"
+                          className="tab"
+                          aria-label="Prevention"
+                        />
+                        <div
+                          role="tabpanel"
+                          className="tab-content rounded-box border-red-300 bg-base-100 p-6"
+                        >
+                         Prevention
+                        </div>
+
+                        {/* Treatment Tab  */}
+                        <input
+                          type="radio"
+                          name="my_tabs_2"
+                          role="tab"
+                          className="tab"
+                          aria-label="Treatment"
+                        />
+                        <div
+                          role="tabpanel"
+                          className="tab-content rounded-box border-red-300 bg-base-100 p-6"
+                        >
+                         Treatment
+                        </div>
+                       
+                      </div>
                     </div>
                   </div>
                 </div>

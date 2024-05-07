@@ -11,10 +11,12 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import AddDisease from "./pages/AddDisease";
 import Login from "./pages/Login";
-
 import AdminPanel from "./dashboard/AdminPanel";
 import { Toaster } from "react-hot-toast";
 import Signup from "./pages/Signup";
+
+// import DiseaseSearch from "./components/TreatementFilterSection/TreatmentFilterSectionMain";
+
 
 const App = () => {
   const queryClient = new QueryClient({
@@ -52,6 +54,8 @@ const App = () => {
       <BrowserRouter>
         <Header />
         <Routes>
+          {/* Routes */}
+          
           <Route exact path="/" element={<Home />} />
           <Route path="/Disease" element={<Disease />} />
           <Route path="/Treatment" element={<Treatment />} />
@@ -61,6 +65,10 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<AdminPanel />} />
           <Route path="/signup" element={<Signup />} />
+          
+          {/* <Route exact path="/DiseaseSearch" element={<DiseaseSearch />} /> */}
+
+          {/* 404 page */}
           <Route path="*" element={<p>Page not found</p>} />
         </Routes>
         <Footer />

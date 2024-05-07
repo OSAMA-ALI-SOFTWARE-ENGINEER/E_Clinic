@@ -11,10 +11,8 @@ const sharedClasses = {
 function Title_section() {
   return (
     <div
-      className={`bg-black text-zinc-900 dark:bg-zinc-800 dark:text-zinc-100 ${sharedClasses.container} h-auto bg-cover bg-center sm:h-72 md:h-80`}
-      style={{
-        backgroundImage: `linear-gradient(90deg, rgba(57, 73, 155, 0.00) 0%, rgba(10, 18, 200, 1.77) 4.78%), linear-gradient(90deg, rgba(57, 73, 155, 0.00) 0%, rgba(5, 16, 117, 0.77) 24.78%)`,
-      }}
+      className={`bg-gradient-to-r from-cyan-800 to-cyan-400 text-zinc-900 dark:bg-zinc-800 dark:text-zinc-100 ${sharedClasses.container} h-auto bg-cover bg-center sm:h-72 md:h-80`}
+      
     >
       <h1 className="mb-6 text-center text-3xl font-bold sm:text-4xl ">
         Types of Treatment
@@ -28,13 +26,13 @@ function Title_section() {
         conditions and health issues that may help you and your family's health.
       </p>
       <div className="mb-6 flex flex-col gap-4 md:flex-row">
-        <button className="rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600">
+        <button className="rounded bg-sky-500 px-4 py-2 text-white hover:bg-sky-600">
           OVERVIEW
         </button>
-        <button className="rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600">
+        <button className="rounded bg-sky-500 px-4 py-2 text-white hover:bg-sky-600">
           TREATMENT
         </button>
-        <button className="rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600">
+        <button className="rounded bg-sky-500 px-4 py-2 text-white hover:bg-sky-600">
           OTHER DISEASE
         </button>
       </div>

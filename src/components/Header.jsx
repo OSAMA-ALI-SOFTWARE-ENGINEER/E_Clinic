@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
-
+// import Logo from ""
 const links = [
   { to: "/dashboard", name: "Dashboard" },
   { to: "/", name: "Home" },
@@ -23,11 +23,11 @@ const Header = () => {
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
-          <a href="/" className="-m-1.5 p-1.5">
+          <a href="/" className="">
             <span className="sr-only">Your Company</span>
             <img
-              className="h-8 w-auto"
-              src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+              className="h-12 w-auto"
+              src={'../../public/Logo.png'}
               alt=""
             />
           </a>
@@ -54,13 +54,13 @@ const Header = () => {
           ))}
         </div>
         <div className="hidden items-center gap-4 lg:flex lg:flex-1 lg:justify-end">
-          <Link
+          {/* <Link
             className=" rounded-sm bg-cyan-400 px-4 py-2 font-primary font-medium capitalize text-cyan-900 shadow-lg duration-200 hover:shadow-none active:scale-90"
             to={"/add-disease"}
           >
             Add new Disease
-          </Link>
-          <Link className=" rounded-sm bg-cyan-400 px-6 py-1.5" to={"/login"}>
+          </Link> */}
+          <Link className=" bg-cyan-400 border rounded-md px-6 py-1.5" to={"/login"}>
             Login
           </Link>
         </div>
