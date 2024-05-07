@@ -35,3 +35,29 @@ export async function deleteDisease(id) {
     throw new Error("Failed to delete disease. Try again later.");
   }
 }
+export async function updateDisease(id, updateData) {
+  const { data, error } = await supabase
+    .from("Disease")
+    .update({ ...updateData })
+    .eq("id", id)
+    .select();
+
+  if (error) {
+    console.log(error);
+    throw new Error("Failed to update disease. Try again later.");
+  }
+
+  return data;
+}
+
+export async function getSingleDisease(id) {
+  let { data: Disease, error } = await supabase
+    .from("Disease")
+    .select("*")
+    .eq("id", id);
+  if (error) {
+    console.log(error);
+    throw new Error("Failed to update disease. Try again later.");
+  }
+  return Disease[0];
+}

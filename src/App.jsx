@@ -14,6 +14,7 @@ import Login from "./pages/Login";
 
 import AdminPanel from "./dashboard/AdminPanel";
 import { Toaster } from "react-hot-toast";
+import Signup from "./pages/Signup";
 
 const App = () => {
   const queryClient = new QueryClient({
@@ -59,7 +60,8 @@ const App = () => {
           <Route path="/add-disease" element={<AddDisease />} />
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<AdminPanel />} />
-          {/* <Route path="/signup" element={<Signup />} /> */}
+          <Route path="/signup" element={<Signup />} />
+          <Route path="*" element={<p>Page not found</p>} />
         </Routes>
         <Footer />
       </BrowserRouter>

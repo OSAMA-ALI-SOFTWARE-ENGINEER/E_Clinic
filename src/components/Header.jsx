@@ -60,12 +60,9 @@ const Header = () => {
           >
             Add new Disease
           </Link>
-          <a
-            href="#"
-            className="flex h-9 w-24 items-center justify-center rounded-lg bg-cyan-300  text-sm font-semibold leading-6 text-gray-900 hover:bg-cyan-500"
-          >
-            Subscribe <span aria-hidden="true">&rarr;</span>
-          </a>
+          <Link className=" rounded-sm bg-cyan-400 px-6 py-1.5" to={"/login"}>
+            Login
+          </Link>
         </div>
       </nav>
       <Dialog

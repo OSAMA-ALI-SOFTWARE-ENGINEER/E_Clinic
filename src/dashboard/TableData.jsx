@@ -1,16 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDiasease } from "../components/TreatementFilterSection/useDiseases";
 import ErrorMessage from "../ui/ErrorMessage";
 import { useDelete } from "./useDelete";
 import { Link } from "react-router-dom";
+import Modal from "../ui/Modal";
 
 const TableData = () => {
   const { Diseases, isLoading, isError } = useDiasease();
   const { deleteDisease, isDeleting } = useDelete();
 
+  const [showModa, setShowModal] = useState(false);
+  const [editID, setEditID] = useState("");
+
   function handleDelete(id) {
     deleteDisease(id);
   }
+
+  function handleUpdate(id) {
+    setEditID(id);
+    setShowModal(true);
+  }
+
   if (isLoading) return <p>Loading...</p>;
   if (isError)
     return <ErrorMessage>Something went wrong on the server.</ErrorMessage>;
@@ -52,7 +62,12 @@ const TableData = () => {
                   </td>
 
                   <th className=" flex items-center ">
-                    <button className="btn btn-ghost btn-xs">update</button>
+                    <button
+                      onClick={() => handleUpdate(cur.id)}
+                      className="btn btn-ghost btn-xs"
+                    >
+                      update
+                    </button>
                     <button
                       onClick={() => handleDelete(cur.id)}
                       className="btn btn-ghost btn-xs"
@@ -60,24 +75,17 @@ const TableData = () => {
                     >
                       delete
                     </button>
-                    <Link to={'/add-disease'} className="btn btn-ghost btn-xs">add</Link>
+                    <Link to={"/add-disease"} className="btn btn-ghost btn-xs">
+                      add
+                    </Link>
                   </th>
                 </tr>
               );
             })}
           </tbody>
-          {/* foot */}
-          {/* <tfoot>
-          <tr>
-            <th></th>
-            <th>Name</th>
-            <th>Job</th>
-            <th>Favorite Color</th>
-            <th></th>
-          </tr>
-        </tfoot> */}
         </table>
       )}
+      {showModa && <Modal editID={editID} setShowModal={setShowModal} />}
     </div>
   );
 };
