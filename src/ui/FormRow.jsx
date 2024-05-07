@@ -10,7 +10,7 @@ const FormRow = ({ children, lable, error }) => {
       </label>
       <div className=" space-y-2">
         {children}
-        {error && <p className=" text-xs font-medium text-red-600">{error}</p>}
+        {error && <p className=" text-sm font-medium text-red-600">{error}</p>}
       </div>
     </div>
   );

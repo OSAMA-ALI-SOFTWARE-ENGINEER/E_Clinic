@@ -11,7 +11,8 @@ const module = {
 };
 
 const AddDisease = () => {
-  const { register, control, handleSubmit, reset } = useForm();
+  
+  const { register, control, formState:{errors}, handleSubmit, reset } = useForm();
   const { addDisease, isAdding } = useAddDisease();
 
   function onSubmit(data) {
@@ -31,7 +32,7 @@ const AddDisease = () => {
         onSubmit={handleSubmit(onSubmit)}
         className=" flex max-w-[80%] flex-col gap-4 rounded-md p-6 font-primary shadow-xl"
       >
-        <FormRow lable={"Disease name"}>
+        <FormRow lable={"Disease name"} error={errors?.name?.message}>
           <input
             disabled={isAdding}
             type="text"
@@ -52,6 +53,7 @@ const AddDisease = () => {
               <ReactQuill
                 modules={module}
                 value={field.value}
+                
                 onChange={(value) => field.onChange(value)}
                 className=" rounded-xl border-none bg-cyan-400 shadow-xl outline-none disabled:cursor-not-allowed disabled:bg-cyan-500"
               />

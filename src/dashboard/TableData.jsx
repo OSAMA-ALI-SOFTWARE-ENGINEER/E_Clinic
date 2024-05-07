@@ -2,6 +2,7 @@ import React from "react";
 import { useDiasease } from "../components/TreatementFilterSection/useDiseases";
 import ErrorMessage from "../ui/ErrorMessage";
 import { useDelete } from "./useDelete";
+import { Link } from "react-router-dom";
 
 const TableData = () => {
   const { Diseases, isLoading, isError } = useDiasease();
@@ -59,7 +60,7 @@ const TableData = () => {
                     >
                       delete
                     </button>
-                    <button className="btn btn-ghost btn-xs">add</button>
+                    <Link to={'/add-disease'} className="btn btn-ghost btn-xs">add</Link>
                   </th>
                 </tr>
               );
