@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 
-import Logo from "../../public/Logo.png";
+import Logo from "/Logo.png";
 import { FaEye } from "react-icons/fa6";
 import { FaEyeSlash } from "react-icons/fa6";
 import { Link } from "react-router-dom";
@@ -22,7 +22,7 @@ const Login = () => {
     <div className=" grid grid-cols-[35rem_1fr] gap-x-14 ml-28 mr-3 ">
       {/*Left Side Cover image */}
       <div className="w-[650px] my-24">
-       <img src={"./Cover.png"} alt="allergies" className="min-h-screen" />
+       <img src={"./Cover.png"} alt="allergies" className="" />
       </div>
 
       {/* content */}

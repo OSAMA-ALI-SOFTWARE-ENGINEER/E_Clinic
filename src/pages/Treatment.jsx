@@ -10,8 +10,8 @@ function Treatment() {
       <TreatmentFilterSection />
       <Title_section />
       <Tcard />
-      <Tcard />
-      <Tcard />
+      {/* <Tcard />
+      <Tcard /> */}
     </div>
   );
 }

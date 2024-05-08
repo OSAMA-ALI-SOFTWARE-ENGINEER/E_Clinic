@@ -30,15 +30,16 @@ import cancer from "../assets/images/Cancer.png";
 
 const T_card = () => {
   return (
+    <>
     <div className=" flex gap-6 px-8 py-12">
       <img
         className=" aspect-square w-56 rounded-md border border-gray-600 bg-gray-200 object-cover"
         src="/Cancer.png"
         alt=""
-      />
+        />
       <div className=" space-y-3">
         <h2 className=" w-fit border-b-[4px] border-red-600 font-secondary text-2xl font-semibold capitalize">
-          diseas name
+          Traditional Treatement
         </h2>
         <hr />
         <p>
@@ -50,6 +51,47 @@ const T_card = () => {
         </p>
       </div>
     </div>
+    <div className=" flex gap-6 px-8 py-12">
+      <img
+        className=" aspect-square w-56 rounded-md border border-gray-600 bg-gray-200 object-cover"
+        src="/Cancer.png"
+        alt=""
+        />
+      <div className=" space-y-3">
+        <h2 className=" w-fit border-b-[4px] border-red-600 font-secondary text-2xl font-semibold capitalize">
+          Traditional Treatement
+        </h2>
+        <hr />
+        <p>
+          Here we are providing multiple levels of disease solution and their
+          treatment with random and real medicines which may help you out easy
+          for your life. Here we are providing multiple levels of disease
+          solution and their treatment with random and real medicines which may
+          help you out easy for your life
+        </p>
+      </div>
+    </div>
+    <div className=" flex gap-6 px-8 py-12">
+      <img
+        className=" aspect-square w-56 rounded-md border border-gray-600 bg-gray-200 object-cover"
+        src="/Cancer.png"
+        alt=""
+        />
+      <div className=" space-y-3">
+        <h2 className=" w-fit border-b-[4px] border-red-600 font-secondary text-2xl font-semibold capitalize">
+          Traditional Treatement
+        </h2>
+        <hr />
+        <p>
+          Here we are providing multiple levels of disease solution and their
+          treatment with random and real medicines which may help you out easy
+          for your life. Here we are providing multiple levels of disease
+          solution and their treatment with random and real medicines which may
+          help you out easy for your life
+        </p>
+      </div>
+    </div>
+        </>
   );
 };
 

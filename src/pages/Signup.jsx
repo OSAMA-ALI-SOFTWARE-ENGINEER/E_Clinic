@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import Image from "../../public/Cover.png";
-import Logo from "../../public/Logo.png";
+import Image from "/Cover.png";
+import Logo from "/Logo.png";
 
 import { FaEye } from "react-icons/fa6";
 import { FaEyeSlash } from "react-icons/fa6";
