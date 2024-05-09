@@ -64,18 +64,18 @@ const TableData = () => {
                   <th className=" flex items-center ">
                     <button
                       onClick={() => handleUpdate(cur.id)}
-                      className="btn btn-ghost btn-xs"
+                      className="btn btn-ghost btn-xs bg-green-300 hover:text-white hover:bg-green-700"
                     >
                       update
                     </button>
                     <button
                       onClick={() => handleDelete(cur.id)}
-                      className="btn btn-ghost btn-xs"
+                      className="btn btn-ghost btn-xs bg-red-400 hover:text-white hover:bg-red-700"
                       disabled={isDeleting}
                     >
                       delete
                     </button>
-                    <Link to={"/add-disease"} className="btn btn-ghost btn-xs">
+                    <Link to={"/add-disease"} className="btn btn-ghost btn-xs hover:text-white bg-sky-400 hover:bg-sky-700">
                       add
                     </Link>
                   </th>

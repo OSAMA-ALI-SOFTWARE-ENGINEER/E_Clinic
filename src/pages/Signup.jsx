@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
-import Image from "../assets/images/image.png";
-import Logo from "../assets/images/Logo.png";
-import GoogleSvg from "../assets/images/icons8-google.svg";
+import Image from "/Cover.png";
+import Logo from "/Logo.png";
+
 import { FaEye } from "react-icons/fa6";
 import { FaEyeSlash } from "react-icons/fa6";
 import { Link } from "react-router-dom";
@@ -37,20 +37,22 @@ const Signup = () => {
   }
 
   return (
-    <div className=" grid grid-cols-[25rem_1fr] gap-x-10 p-4">
-      {/* image */}
-      <div>
-        <p>image</p>
+    <>
+    <div className=" grid grid-cols-[35rem_1fr] gap-x-14 ml-28 mr-3">
+       {/*Left Side Cover image */}
+       <div className="w-[650px] my-24">
+       <img src={Image} alt="allergies" className="min-h-screen" />
       </div>
+
 
       {/* content */}
 
       <div className="  max-w-[80%] p-12  ">
-        <form action="" className="mb-6 flex flex-col gap-4 p-4 shadow-xl">
-          <div>
-            <p>logo</p>
+        <form action="" className="mb-8 mt-12 flex bg-base-200 flex-col gap-4 p-4 shadow-xl">
+        <div className="flex flex-col">
+            <img src={Logo} alt="logo" className=" items-stretch"  />
 
-            <p>welcome</p>
+            <p className="text-xl font-bold self-center captalize">Welcome to SignUp</p>
           </div>
           <label className="input input-bordered flex items-center gap-2">
             <svg
@@ -101,7 +103,7 @@ const Signup = () => {
               viewBox="0 0 16 16"
               fill="currentColor"
               className="h-4 w-4 opacity-70"
-            >
+              >
               <path
                 fillRule="evenodd"
                 d="M14 6a4 4 0 0 1-4.899 3.899l-1.955 1.955a.5.5 0 0 1-.353.146H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2.293a.5.5 0 0 1 .146-.353l3.955-3.955A4 4 0 1 1 14 6Zm-4-2a.75.75 0 0 0 0 1.5.5.5 0 0 1 .5.5.75.75 0 0 0 1.5 0 2 2 0 0 0-2-2Z"
@@ -119,9 +121,9 @@ const Signup = () => {
             />
             {showPassword ? (
               <FaEyeSlash onClick={handleShowPass} />
-            ) : (
-              <FaEye onClick={handleHiddenPass} />
-            )}
+              ) : (
+                <FaEye onClick={handleHiddenPass} />
+                )}
           </label>
           <label className="input input-bordered flex items-center gap-2">
             <svg
@@ -148,7 +150,7 @@ const Signup = () => {
             {/* {showPassword ? <FaEyeSlash onClick={handleShowPass} /> : <FaEye />} */}
           </label>
 
-          <button>signup</button>
+          <button className="btn bg-cyan-300 hover:bg-cyan-900 hover:text-white sm:btn-sm md:btn-md  uppercase">signup</button>
         </form>
 
         <div className=" flex justify-between">
@@ -168,6 +170,7 @@ const Signup = () => {
         </div>
       </div>
     </div>
+              </>
   );
 };
 

@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import Image from "../assets/images/image.png";
-import Logo from "../assets/images/Logo.png";
-import GoogleSvg from "../assets/images/icons8-google.svg";
+
+import Logo from "/Logo.png";
 import { FaEye } from "react-icons/fa6";
 import { FaEyeSlash } from "react-icons/fa6";
 import { Link } from "react-router-dom";
@@ -20,20 +19,20 @@ const Login = () => {
   }
 
   return (
-    <div className=" grid grid-cols-[25rem_1fr] gap-x-10 p-4">
-      {/* image */}
-      <div>
-        <p>image</p>
+    <div className=" grid grid-cols-[35rem_1fr] gap-x-14 ml-28 mr-3 ">
+      {/*Left Side Cover image */}
+      <div className="w-[650px] my-24">
+       <img src={"./Cover.png"} alt="allergies" className="" />
       </div>
 
       {/* content */}
 
-      <div className="  max-w-[80%] p-12  ">
-        <form action="" className="mb-6 flex flex-col gap-4 p-4 shadow-xl">
-          <div>
-            <p>logo</p>
+      <div className="  max-w-[80%] p-12">
+        <form action="" className="mb-8 mt-12 flex bg-base-200 flex-col gap-4 p-4 shadow-xl">
+          <div className="flex flex-col">
+            <img src={Logo} alt="logo" className=" self-center"  />
 
-            <p>welcome</p>
+            <p className="text-xl font-bold self-center">welcome to Admin Login</p>
           </div>
           <label className="input input-bordered flex items-center gap-2">
             <svg
@@ -73,8 +72,8 @@ const Login = () => {
               <FaEye onClick={handleHiddenPass} />
             )}
           </label>
-
-          <button>login</button>
+      
+          <button className="btn bg-cyan-300 hover:bg-cyan-900 hover:text-white sm:btn-sm md:btn-md  uppercase">login</button>
         </form>
 
         <div className=" flex justify-between">
