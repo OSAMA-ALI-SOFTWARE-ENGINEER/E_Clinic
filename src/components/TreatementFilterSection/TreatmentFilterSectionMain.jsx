@@ -65,7 +65,7 @@ const TreatmentFilterSection = () => {
                           role="tabpanel"
                           aria-label="Symptoms"
                           className="tab-content rounded-box border-red-300 bg-base-100 p-6"
-                          dangerouslySetInnerHTML={{ __html: item.content }}
+                          dangerouslySetInnerHTML={{ __html: item.overview }}
                         />
 
                         {/* Symptoms Tab */}
@@ -80,9 +80,9 @@ const TreatmentFilterSection = () => {
                         <div
                           role="tabpanel"
                           className="tab-content rounded-box border-red-300 bg-base-100 p-6"
-                        >
-                          Symptoms
-                        </div>
+                          dangerouslySetInnerHTML={{ __html: item.symptoms }}
+                        />
+                        
                         {/* Causes Tab */}
                         <input
                           type="radio"
@@ -94,9 +94,9 @@ const TreatmentFilterSection = () => {
                         <div
                           role="tabpanel"
                           className="tab-content rounded-box border-red-300 bg-base-100 p-6"
-                        >
-                         Causes
-                        </div>
+                          dangerouslySetInnerHTML={{ __html: item.causes }}
+                        />
+                       
 
                         {/* Prevention Tab */}
                         <input
@@ -109,9 +109,9 @@ const TreatmentFilterSection = () => {
                         <div
                           role="tabpanel"
                           className="tab-content rounded-box border-red-300 bg-base-100 p-6"
-                        >
-                         Prevention
-                        </div>
+                          dangerouslySetInnerHTML={{ __html: item.prevention }}
+                       />
+                        
 
                         {/* Treatment Tab  */}
                         <input
@@ -124,9 +124,9 @@ const TreatmentFilterSection = () => {
                         <div
                           role="tabpanel"
                           className="tab-content rounded-box border-red-300 bg-base-100 p-6"
-                        >
-                         Treatment
-                        </div>
+                          dangerouslySetInnerHTML={{ __html: item.treatment }}
+                        />
+                      
                        
                       </div>
                     </div>

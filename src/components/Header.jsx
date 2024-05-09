@@ -54,12 +54,12 @@ const Header = () => {
           ))}
         </div>
         <div className="hidden items-center gap-4 lg:flex lg:flex-1 lg:justify-end">
-          {/* <Link
+          <Link
             className=" rounded-sm bg-cyan-400 px-4 py-2 font-primary font-medium capitalize text-cyan-900 shadow-lg duration-200 hover:shadow-none active:scale-90"
             to={"/add-disease"}
           >
             Add new Disease
-          </Link> */}
+          </Link>
           <Link className=" bg-cyan-400 border rounded-md px-6 py-1.5" to={"/login"}>
             Login
           </Link>

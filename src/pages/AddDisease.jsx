@@ -43,7 +43,92 @@ const AddDisease = () => {
             })}
           />
         </FormRow>
-        <FormRow lable={"Disease Content"}>
+        <FormRow lable={"Disease Overview"}>
+          <Controller
+            name="overview" // Set the name for React Hook Form
+            control={control}
+            defaultValue=""
+            disabled={isAdding}
+            render={({ field }) => (
+              <ReactQuill
+                modules={module}
+                value={field.value}
+                
+                onChange={(value) => field.onChange(value)}
+                className=" rounded-xl border-none bg-base-100 shadow-xl outline-none disabled:cursor-not-allowed disabled:bg-cyan-500"
+              />
+            )}
+          />
+        </FormRow>
+        <FormRow lable={"Disease Symptoms"}>
+          <Controller
+            name="symptoms" // Set the name for React Hook Form
+            control={control}
+            defaultValue=""
+            disabled={isAdding}
+            render={({ field }) => (
+              <ReactQuill
+                modules={module}
+                value={field.value}
+                
+                onChange={(value) => field.onChange(value)}
+                className=" rounded-xl border-none bg-base-100 shadow-xl outline-none disabled:cursor-not-allowed disabled:bg-cyan-500"
+              />
+            )}
+          />
+        </FormRow>
+        <FormRow lable={"Disease Causes"}>
+          <Controller
+            name="causes" // Set the name for React Hook Form
+            control={control}
+            defaultValue=""
+            disabled={isAdding}
+            render={({ field }) => (
+              <ReactQuill
+                modules={module}
+                value={field.value}
+                
+                onChange={(value) => field.onChange(value)}
+                className=" rounded-xl border-none bg-base-100 shadow-xl outline-none disabled:cursor-not-allowed disabled:bg-cyan-500"
+              />
+            )}
+          />
+        </FormRow>
+        <FormRow lable={"Disease Prevention"}>
+          <Controller
+            name="prevention" // Set the name for React Hook Form
+            control={control}
+            defaultValue=""
+            disabled={isAdding}
+            render={({ field }) => (
+              <ReactQuill
+                modules={module}
+                value={field.value}
+                
+                onChange={(value) => field.onChange(value)}
+                className=" rounded-xl border-none bg-base-100 shadow-xl outline-none disabled:cursor-not-allowed disabled:bg-cyan-500"
+              />
+            )}
+          />
+        </FormRow>
+        <FormRow lable={"Disease Treatment"}>
+          <Controller
+            name="treatment" // Set the name for React Hook Form
+            control={control}
+            defaultValue=""
+            disabled={isAdding}
+            render={({ field }) => (
+              <ReactQuill
+                modules={module}
+                value={field.value}
+                
+                onChange={(value) => field.onChange(value)}
+                className=" rounded-xl border-none bg-base-100 shadow-xl outline-none disabled:cursor-not-allowed disabled:bg-cyan-500"
+              />
+            )}
+          />
+        </FormRow>
+        {/* <FormRow lable={"Disease Content"}>
           <Controller
             name="content" // Set the name for React Hook Form
             control={control}
@@ -59,7 +144,7 @@ const AddDisease = () => {
               />
             )}
           />
-        </FormRow>
+        </FormRow> */}
 
         <FormRow lable={"Disease image"}>
           <input
