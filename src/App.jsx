@@ -14,7 +14,6 @@ import Login from "./pages/Login";
 import AdminPanel from "./dashboard/AdminPanel";
 import { Toaster } from "react-hot-toast";
 import Signup from "./pages/Signup";
-
 import AdminHeader from "./ui/AdminHeader";
 
 // import DiseaseSearch from "./components/TreatementFilterSection/TreatmentFilterSectionMain";
@@ -66,7 +65,6 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<AdminPanel />} />
           <Route path="/signup" element={<Signup />} />
-
           {/* <Route exact path="/DiseaseSearch" element={<DiseaseSearch />} /> */}
 
           {/* 404 page */}
