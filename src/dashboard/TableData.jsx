@@ -26,27 +26,30 @@ const TableData = () => {
     return <ErrorMessage>Something went wrong on the server.</ErrorMessage>;
   return (
     <div className="overflow-x-auto">
-      {Diseases?.length === 0 ? (
-        <div className=" flex items-center justify-center p-8">
-          <div>
-            <p className=" font-medium">No data found at the moment.</p>
-          </div>
-        </div>
-      ) : (
-        <table className="table">
-          {/* head */}
-          <thead>
+      <table className="table relative">
+        {/* head */}
+        <thead>
+          <tr>
+            <th></th>
+            <th>Picture</th>
+            <th>Disease name</th>
+            <th>Actions</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {/* row 1 */}
+          {Diseases?.length === 0 ? (
             <tr>
-              <th></th>
-              <th>Picture</th>
-              <th>Disease name</th>
-              <th>Actions</th>
-              <th></th>
+              <td></td>
+              <td></td>
+              <td className=" text-xl font-semibold capitalize text-gray-400">
+                No data found
+              </td>
+              <td></td>
             </tr>
-          </thead>
-          <tbody>
-            {/* row 1 */}
-            {Diseases?.map((cur, i) => {
+          ) : (
+            Diseases?.map((cur, i) => {
               return (
                 <tr key={cur.id}>
                   <th>{i + 1}</th>
@@ -84,10 +87,11 @@ const TableData = () => {
                   </th>
                 </tr>
               );
-            })}
-          </tbody>
-        </table>
-      )}
+            })
+          )}
+        </tbody>
+      </table>
+
       {showModal && <Modal editID={editID} setShowModal={setShowModal} />}
     </div>
   );

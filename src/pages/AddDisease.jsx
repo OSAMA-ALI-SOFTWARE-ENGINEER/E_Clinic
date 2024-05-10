@@ -5,14 +5,21 @@ import "react-quill/dist/quill.snow.css";
 import FormRow from "../ui/FormRow";
 import { toolbarOptions } from "../components/TreatementFilterSection/toolbarOptions";
 import { useAddDisease } from "../components/createDisease/useAdddDisease";
+import { useNavigate } from "react-router-dom";
 
 const module = {
   toolbar: toolbarOptions,
 };
 
 const AddDisease = () => {
-  
-  const { register, control, formState:{errors}, handleSubmit, reset } = useForm();
+  const navigate = useNavigate();
+  const {
+    register,
+    control,
+    formState: { errors },
+    handleSubmit,
+    reset,
+  } = useForm();
   const { addDisease, isAdding } = useAddDisease();
 
   function onSubmit(data) {
@@ -30,8 +37,14 @@ const AddDisease = () => {
     <div className=" flex items-center justify-center bg-gradient-to-br from-stone-300 to-cyan-200 p-8 text-cyan-950">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className=" flex max-w-[80%] flex-col gap-4 rounded-md p-6 font-primary shadow-xl bg-slate-200"
+        className=" relative flex max-w-[80%] flex-col gap-4 rounded-md bg-slate-200 p-6 font-primary shadow-xl"
       >
+        <button
+          onClick={() => navigate(-1)}
+          className="btn btn-circle btn-ghost btn-sm absolute right-2 top-2"
+        >
+          ✕
+        </button>
         <FormRow lable={"Disease name"} error={errors?.name?.message}>
           <input
             disabled={isAdding}
@@ -53,7 +66,6 @@ const AddDisease = () => {
               <ReactQuill
                 modules={module}
                 value={field.value}
-                
                 onChange={(value) => field.onChange(value)}
                 className=" rounded-xl border-none bg-base-100 shadow-xl outline-none disabled:cursor-not-allowed disabled:bg-cyan-500"
               />
@@ -70,7 +82,6 @@ const AddDisease = () => {
               <ReactQuill
                 modules={module}
                 value={field.value}
-                
                 onChange={(value) => field.onChange(value)}
                 className=" rounded-xl border-none bg-base-100 shadow-xl outline-none disabled:cursor-not-allowed disabled:bg-cyan-500"
               />
@@ -87,7 +98,6 @@ const AddDisease = () => {
               <ReactQuill
                 modules={module}
                 value={field.value}
-                
                 onChange={(value) => field.onChange(value)}
                 className=" rounded-xl border-none bg-base-100 shadow-xl outline-none disabled:cursor-not-allowed disabled:bg-cyan-500"
               />
@@ -104,7 +114,6 @@ const AddDisease = () => {
               <ReactQuill
                 modules={module}
                 value={field.value}
-                
                 onChange={(value) => field.onChange(value)}
                 className=" rounded-xl border-none bg-base-100 shadow-xl outline-none disabled:cursor-not-allowed disabled:bg-cyan-500"
               />
@@ -121,7 +130,6 @@ const AddDisease = () => {
               <ReactQuill
                 modules={module}
                 value={field.value}
-                
                 onChange={(value) => field.onChange(value)}
                 className=" rounded-xl border-none bg-base-100 shadow-xl outline-none disabled:cursor-not-allowed disabled:bg-cyan-500"
               />
@@ -161,7 +169,7 @@ const AddDisease = () => {
             // })}
           />
         </FormRow>
-        <div className=" flex gap-2 mt-6">
+        <div className=" mt-6 flex gap-2">
           <button
             disabled={isAdding}
             className="text-bodyColor disabled:text-bodyColor btn flex min-w-[8rem] items-center justify-center border-none bg-cyan-400 font-semibold uppercase hover:scale-95 hover:bg-cyan-600 disabled:cursor-not-allowed disabled:bg-sky-500 disabled:opacity-60"
@@ -170,9 +178,10 @@ const AddDisease = () => {
             submit
           </button>
           <button
-            // disabled={isAdding}
+            disabled={isAdding}
             className="text-bodyColor disabled:text-bodyColor btn flex min-w-[8rem] items-center justify-center border-none bg-cyan-400 font-semibold uppercase hover:scale-95 hover:bg-cyan-600 disabled:cursor-not-allowed disabled:bg-sky-500 disabled:opacity-60"
             type="reset"
+            onClick={() => navigate(-1)}
           >
             Cancel
           </button>

@@ -15,10 +15,10 @@ const AdminPanel = () => {
 
   if (isLoading) return <p> loading...</p>;
 
-  if (isAuthenticated)
+  if (isAuthenticated && !isLoading)
     return (
       <div className=" mx-auto my-8 max-w-[1000px]">
-        <AdminHeader />
+        <AdminHeader isAuthenticated={isAuthenticated} />
         <TableData />
       </div>
     );
