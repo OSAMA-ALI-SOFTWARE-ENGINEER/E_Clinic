@@ -11,7 +11,6 @@ function Home() {
   return (
     <>
       <Header />
-
       <div className=" bg-cyan-200">
         <div>
           <div className="flex h-screen  w-full bg-zinc-200 pt-1">

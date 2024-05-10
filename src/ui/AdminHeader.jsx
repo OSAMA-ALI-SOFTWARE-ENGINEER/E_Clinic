@@ -1,7 +1,17 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useLogOut } from "../components/auth/useLogout";
 
 const AdminHeader = () => {
+  const navigate = useNavigate();
+  const { logout, isOuting } = useLogOut();
+
+  function handleLogout() {
+    logout();
+  }
+
+  if (isOuting) return <p>loading...</p>;
+
   return (
     <header className="navbar bg-gray-100">
       <div className="navbar-start">
@@ -45,7 +55,7 @@ const AdminHeader = () => {
             <Link to={"/"}>visit website</Link>
           </li>
           <li className=" rounded-md bg-gray-200">
-            <Link>manage disease</Link>
+            <Link to={"/add-disease"}>Add disease</Link>
           </li>
           <li className=" rounded-md bg-gray-200">
             <a>manage treatment</a>
@@ -53,7 +63,13 @@ const AdminHeader = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Button</a>
+        <button
+          disabled={isOuting}
+          onClick={handleLogout}
+          className=" rounded-md border border-none bg-red-600 px-6 py-1.5 font-medium capitalize text-cyan-100 outline-none transition-all duration-300 hover:shadow-xl active:scale-90 disabled:cursor-not-allowed disabled:opacity-50"
+        >
+          logout
+        </button>
       </div>
     </header>
   );

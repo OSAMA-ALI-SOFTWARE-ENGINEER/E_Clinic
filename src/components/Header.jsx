@@ -3,7 +3,7 @@ import React from "react";
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useCurrentUser } from "./auth/useCurrentUser";
 import { useLogOut } from "./auth/useLogout";
 
@@ -18,11 +18,18 @@ const links = [
 ];
 
 const Header = () => {
+  const navigate = useNavigate();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const { isAuthenticated, isLoading } = useCurrentUser();
   const { logout, isOuting } = useLogOut();
 
+  console.log(isAuthenticated);
+  function handleLogout() {
+    logout();
+  }
+
+  if (isLoading || isOuting) return <p>loading...</p>;
   return (
     <header className=" bg-zinc-300">
       <nav
@@ -46,14 +53,6 @@ const Header = () => {
           </button>
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
-          {isAuthenticated && (
-            <Link
-              className="text-sm  font-semibold leading-6 text-gray-900"
-              to={"/dashboard"}
-            >
-              dashboard
-            </Link>
-          )}
           <Link
             className="text-sm  font-semibold leading-6 text-gray-900"
             to={"/"}
@@ -86,10 +85,10 @@ const Header = () => {
           >
             Add new Disease
           </Link> */}
-          {isAuthenticated ? (
+          {isAuthenticated && !isLoading ? (
             <button
               disabled={isOuting}
-              onClick={() => logout()}
+              onClick={handleLogout}
               className=" rounded-md border border-none bg-red-600 px-6 py-1.5 font-medium capitalize text-cyan-100 outline-none transition-all duration-300 hover:shadow-xl active:scale-90 disabled:cursor-not-allowed disabled:opacity-50"
             >
               logout
