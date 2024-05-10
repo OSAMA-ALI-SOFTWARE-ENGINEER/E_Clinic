@@ -3,7 +3,10 @@ import React from "react";
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useCurrentUser } from "./auth/useCurrentUser";
+import { useLogOut } from "./auth/useLogout";
+
 // import Logo from ""
 const links = [
   { to: "/dashboard", name: "Dashboard" },
@@ -16,6 +19,10 @@ const links = [
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const { isAuthenticated, isLoading } = useCurrentUser();
+  const { logout, isOuting } = useLogOut();
+
   return (
     <header className=" bg-zinc-300">
       <nav
@@ -25,11 +32,7 @@ const Header = () => {
         <div className="flex lg:flex-1">
           <a href="/" className="">
             <span className="sr-only">Your Company</span>
-            <img
-              className="h-12 w-auto"
-              src={'../../public/Logo.png'}
-              alt=""
-            />
+            <img className="h-12 w-auto" src={"../../public/Logo.png"} alt="" />
           </a>
         </div>
         <div className="flex lg:hidden">
@@ -43,26 +46,60 @@ const Header = () => {
           </button>
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
-          {links.map((item) => (
-            <a
-              key={item.name}
-              href={item.to}
-              className="text-sm  font-semibold leading-6 text-gray-900"
-            >
-              {item.name}
-            </a>
-          ))}
+          <Link
+            className="text-sm  font-semibold leading-6 text-gray-900"
+            to={"/dashboard"}
+          >
+            dashboard
+          </Link>
+          <Link
+            className="text-sm  font-semibold leading-6 text-gray-900"
+            to={"/"}
+          >
+            home
+          </Link>
+          <Link
+            className="text-sm  font-semibold leading-6 text-gray-900"
+            to={"/disease"}
+          >
+            disease
+          </Link>
+          <Link
+            className="text-sm  font-semibold leading-6 text-gray-900"
+            to={"/treatment"}
+          >
+            treatment
+          </Link>
+          <Link
+            className="text-sm  font-semibold leading-6 text-gray-900"
+            to={"/about"}
+          >
+            about
+          </Link>
         </div>
         <div className="hidden items-center gap-4 lg:flex lg:flex-1 lg:justify-end">
-          <Link
+          {/* <Link
             className=" rounded-sm bg-cyan-400 px-4 py-2 font-primary font-medium capitalize text-cyan-900 shadow-lg duration-200 hover:shadow-none active:scale-90"
             to={"/add-disease"}
           >
             Add new Disease
-          </Link>
-          <Link className=" bg-cyan-400 border rounded-md px-6 py-1.5" to={"/login"}>
-            Login
-          </Link>
+          </Link> */}
+          {isAuthenticated ? (
+            <button
+              disabled={isOuting}
+              onClick={() => logout()}
+              className=" rounded-md border border-none bg-red-600 px-6 py-1.5 font-medium capitalize text-cyan-100 outline-none transition-all duration-300 hover:shadow-xl active:scale-90 disabled:cursor-not-allowed disabled:opacity-50"
+            >
+              logout
+            </button>
+          ) : (
+            <Link
+              className=" rounded-md border border-none bg-cyan-500 px-6 py-1.5 font-medium text-cyan-100 outline-none transition-all duration-200 hover:shadow-lg active:scale-90"
+              to={"/login"}
+            >
+              Login
+            </Link>
+          )}
         </div>
       </nav>
       <Dialog

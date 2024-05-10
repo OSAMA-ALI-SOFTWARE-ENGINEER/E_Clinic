@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 export function useCreateUser() {
   const { mutate: signUp, isPending: isCreating } = useMutation({
     mutationFn: ({ name, email, password, avatar }) =>
-      createUser(name, email, password, avatar),
+      createUser({ name, email, password, avatar }),
     onSuccess: () => {
       toast.success("Account created successfully");
     },

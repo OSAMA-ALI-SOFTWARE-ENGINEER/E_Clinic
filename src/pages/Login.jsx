@@ -3,36 +3,62 @@ import React, { useEffect, useRef, useState } from "react";
 import Logo from "/Logo.png";
 import { FaEye } from "react-icons/fa6";
 import { FaEyeSlash } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useLogin } from "../components/auth/useLogin";
 
 const Login = () => {
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const { login, isLogging } = useLogin();
+
   const ref = useRef();
 
   function handleShowPass() {
     setShowPassword(false);
-    if (ref.current.type) return (ref.current.type = "text");
+    if (ref.current.type) return (ref.current.type = "password");
   }
   function handleHiddenPass() {
     setShowPassword(true);
-    if (ref.current.type) return (ref.current.type = "password");
+    if (ref.current.type) return (ref.current.type = "text");
+  }
+
+  function handleLogin(e) {
+    e.preventDefault();
+    login(
+      { email, password },
+      {
+        onSuccess: () => {
+          navigate("/dashboard", { replace: true });
+          setEmail("");
+          setPassword("");
+        },
+      },
+    );
   }
 
   return (
-    <div className=" grid grid-cols-[35rem_1fr] gap-x-14 ml-28 mr-3 ">
+    <div className=" ml-28 mr-3 grid grid-cols-[35rem_1fr] gap-x-14 ">
       {/*Left Side Cover image */}
-      <div className="w-[650px] my-24">
-       <img src={"./Cover.png"} alt="allergies" className="" />
+      <div className="my-24 w-[650px]">
+        <img src={"./Cover.png"} alt="allergies" className="" />
       </div>
 
       {/* content */}
 
       <div className="  max-w-[80%] p-12">
-        <form action="" className="mb-8 mt-12 flex bg-base-200 flex-col gap-4 p-4 shadow-xl">
+        <form
+          onSubmit={handleLogin}
+          className="mb-8 mt-12 flex flex-col gap-4 bg-base-200 p-4 shadow-xl"
+        >
           <div className="flex flex-col">
-            <img src={Logo} alt="logo" className=" self-center"  />
+            <img src={Logo} alt="logo" className=" self-center" />
 
-            <p className="text-xl font-bold self-center">welcome to Admin Login</p>
+            <p className="self-center text-xl font-bold">
+              welcome to Admin Login
+            </p>
           </div>
           <label className="input input-bordered flex items-center gap-2">
             <svg
@@ -44,7 +70,13 @@ const Login = () => {
               <path d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z" />
               <path d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
             </svg>
-            <input type="email" className=" grow" placeholder="Email" />
+            <input
+              type="email"
+              className=" grow"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
           </label>
 
           <label className="input input-bordered flex items-center gap-2">
@@ -63,8 +95,10 @@ const Login = () => {
             <input
               ref={ref}
               type="password"
+              placeholder="******"
               className="grow"
-              value="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
             {showPassword ? (
               <FaEyeSlash onClick={handleShowPass} />
@@ -72,8 +106,13 @@ const Login = () => {
               <FaEye onClick={handleHiddenPass} />
             )}
           </label>
-      
-          <button className="btn bg-cyan-300 hover:bg-cyan-900 hover:text-white sm:btn-sm md:btn-md  uppercase">login</button>
+
+          <button
+            disabled={isLogging}
+            className="btn bg-cyan-300 uppercase sm:btn-sm md:btn-md hover:bg-cyan-900  hover:text-white"
+          >
+            login
+          </button>
         </form>
 
         <div className=" flex justify-between">

@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 
 export function useLogin() {
   const { mutate: login, isPending: isLogging } = useMutation({
-    mutationFn: ({ email, password }) => loginApi(email, password),
+    mutationFn: ({ email, password }) => loginApi({ email, password }),
     onSuccess: () => {
       toast.success("Login successfully");
     },

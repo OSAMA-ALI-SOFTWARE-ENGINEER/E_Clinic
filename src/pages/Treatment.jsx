@@ -3,20 +3,21 @@ import Title_section from "../ui/Title_section";
 import Tcard from "../ui/Tcard";
 
 import TreatmentFilterSection from "../components/TreatementFilterSection/TreatmentFilterSectionMain";
+import Header from "../components/Header";
 
 function Treatment() {
   return (
-    <div>
-      <TreatmentFilterSection />
-      <Title_section />
-      <Tcard />
-      {/* <Tcard />
+    <>
+      <Header />
+      <div>
+        <TreatmentFilterSection />
+        <Title_section />
+        <Tcard />
+        {/* <Tcard />
       <Tcard /> */}
-    </div>
+      </div>
+    </>
   );
 }
 
 export default Treatment;
-
-
-
