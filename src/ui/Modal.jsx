@@ -22,9 +22,7 @@ const Modal = ({ setShowModal, editID }) => {
     handleSubmit,
     control,
     formState: { errors },
-  } = useForm({
-    defaultValues: !isLoading && Disease,
-  });
+  } = useForm();
 
   function onSubmit(data) {
     updateDisease(
@@ -36,12 +34,11 @@ const Modal = ({ setShowModal, editID }) => {
       },
     );
   }
+
   return (
     <div className=" absolute left-0 top-0 z-10 flex h-screen w-full  items-center justify-center backdrop-blur-md">
       <div className=" mx-auto flex items-center justify-center ">
-        {isLoading ? (
-          <p>loading...</p>
-        ) : (
+        {!isLoading ? (
           <form
             onSubmit={handleSubmit(onSubmit)}
             className=" flex  max-h-[calc(100vh-5em)] max-w-[80%] flex-col gap-4 overflow-y-scroll rounded-md bg-white p-6 font-primary shadow-xl"
@@ -53,6 +50,7 @@ const Modal = ({ setShowModal, editID }) => {
               <input
                 type="text"
                 placeholder="Enter Blog title"
+                defaultValue={Disease?.name}
                 className={`h-12 w-full rounded-lg border-gray-700 bg-gray-100 p-4 text-cyan-900 shadow-lg outline-none outline-offset-2 placeholder:text-gray-400 focus-visible:border-b-transparent disabled:cursor-not-allowed disabled:bg-cyan-500 sm:w-3/4`}
                 {...register("name", {
                   required: "Field is required.",
@@ -63,7 +61,7 @@ const Modal = ({ setShowModal, editID }) => {
               <Controller
                 name="content" // Set the name for React Hook Form
                 control={control}
-                defaultValue=""
+                defaultValue={Disease?.content}
                 // disabled={isAdding}
                 render={({ field }) => (
                   <ReactQuill
@@ -107,6 +105,8 @@ const Modal = ({ setShowModal, editID }) => {
               </button>
             </div>
           </form>
+        ) : (
+          <p>Laoding form data...</p>
         )}
       </div>
     </div>

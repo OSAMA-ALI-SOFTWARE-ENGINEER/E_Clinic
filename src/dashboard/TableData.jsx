@@ -9,7 +9,7 @@ const TableData = () => {
   const { Diseases, isLoading, isError } = useDiasease();
   const { deleteDisease, isDeleting } = useDelete();
 
-  const [showModa, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   const [editID, setEditID] = useState("");
 
   function handleDelete(id) {
@@ -64,18 +64,21 @@ const TableData = () => {
                   <th className=" flex items-center ">
                     <button
                       onClick={() => handleUpdate(cur.id)}
-                      className="btn btn-ghost btn-xs bg-green-300 hover:text-white hover:bg-green-700"
+                      className="btn btn-ghost btn-xs bg-green-300 hover:bg-green-700 hover:text-white"
                     >
                       update
                     </button>
                     <button
                       onClick={() => handleDelete(cur.id)}
-                      className="btn btn-ghost btn-xs bg-red-400 hover:text-white hover:bg-red-700"
+                      className="btn btn-ghost btn-xs bg-red-400 hover:bg-red-700 hover:text-white"
                       disabled={isDeleting}
                     >
                       delete
                     </button>
-                    <Link to={"/add-disease"} className="btn btn-ghost btn-xs hover:text-white bg-sky-400 hover:bg-sky-700">
+                    <Link
+                      to={"/add-disease"}
+                      className="btn btn-ghost btn-xs bg-sky-400 hover:bg-sky-700 hover:text-white"
+                    >
                       add
                     </Link>
                   </th>
@@ -85,7 +88,7 @@ const TableData = () => {
           </tbody>
         </table>
       )}
-      {showModa && <Modal editID={editID} setShowModal={setShowModal} />}
+      {showModal && <Modal editID={editID} setShowModal={setShowModal} />}
     </div>
   );
 };

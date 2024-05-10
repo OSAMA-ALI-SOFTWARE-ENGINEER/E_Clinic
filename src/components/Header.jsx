@@ -3,7 +3,7 @@ import React from "react";
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useCurrentUser } from "./auth/useCurrentUser";
 import { useLogOut } from "./auth/useLogout";
 
@@ -46,12 +46,14 @@ const Header = () => {
           </button>
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
-          <Link
-            className="text-sm  font-semibold leading-6 text-gray-900"
-            to={"/dashboard"}
-          >
-            dashboard
-          </Link>
+          {isAuthenticated && (
+            <Link
+              className="text-sm  font-semibold leading-6 text-gray-900"
+              to={"/dashboard"}
+            >
+              dashboard
+            </Link>
+          )}
           <Link
             className="text-sm  font-semibold leading-6 text-gray-900"
             to={"/"}
