@@ -3,7 +3,7 @@ import BreadCrum from "../../components/TreatementFilterSection/BreadCrum";
 import Content from "./Content";
 import FilterButtons from "./FilterButtons";
 import { useDiasease } from "./useDiseases";
-
+import Header from "../Header";
 const TreatmentFilterSection = () => {
   const [btnContent, setBtnContent] = useState("");
   const [show, setShow] = useState(false);
@@ -14,6 +14,8 @@ const TreatmentFilterSection = () => {
 
   return (
     <>
+    <Header />
+
       <div className="  min-h-[70vh]  max-w-full bg-gradient-to-r from-cyan-800 to-cyan-400 p-8">
         <div className=" mx-auto max-w-[1200px]">
           <BreadCrum />

@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import Disease from "./pages/Disease";
 import Treatment from "./pages/Treatment";
 import About from "./pages/About";
-import Contact from "./pages/Contact";
+
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -18,7 +18,7 @@ import AdminHeader from "./ui/AdminHeader";
 import Subscribers from "./components/subscribers/Subscribers";
 import NotFoundPage from "./pages/NotFound";
 
-// import DiseaseSearch from "./components/TreatementFilterSection/TreatmentFilterSectionMain";
+import DiseaseSearch from "./components/TreatementFilterSection/TreatmentFilterSectionMain";
 
 const App = () => {
   const queryClient = new QueryClient({
@@ -62,14 +62,14 @@ const App = () => {
           <Route path="/Disease" element={<Disease />} />
           <Route path="/Treatment" element={<Treatment />} />
           <Route path="/About" element={<About />} />
-          <Route path="/Contact" element={<Contact />} />
+      
           <Route path="/add-disease" element={<AddDisease />} />
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<AdminPanel />} />
           <Route path="/dashboard/subscribers" element={<Subscribers />} />
 
           {/* <Route path="/signup" element={<Signup />} /> */}
-          {/* <Route exact path="/DiseaseSearch" element={<DiseaseSearch />} /> */}
+          <Route exact path="/DiseaseSearch" element={<DiseaseSearch />} />
 
           {/* 404 page */}
           <Route path="*" element={<NotFoundPage />} />

@@ -4,7 +4,7 @@ import Article from "../components/Article";
 import DiseaseCategories from "../components/DiseaseCategories";
 import ReviewCarousel from "../components/ReviewCarousel";
 import TreatmentTypes from "../components/TreatmentTypes";
-import DiseaseSearch from "../components/TreatementFilterSection/TreatmentFilterSectionMain";
+
 import Header from "../components/Header";
 
 function Home() {
@@ -29,7 +29,7 @@ function Home() {
 
               <Link
                 className=" rounded-md border bg-cyan-400 px-6 py-1.5"
-                to={DiseaseSearch}
+                to={'./DiseaseSearch'}
               >
                 Get Search
               </Link>
