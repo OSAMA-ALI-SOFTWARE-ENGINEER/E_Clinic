@@ -28,7 +28,7 @@ function Home() {
               )}
 
               <Link
-                className=" rounded-md border bg-cyan-400 px-6 py-1.5"
+                className=" rounded-md border bg-cyan-500 hover:bg-sky-900 hover:text-white px-6 py-1.5"
                 to={'./DiseaseSearch'}
               >
                 Get Search
@@ -39,9 +39,14 @@ function Home() {
             </div>
           </div>
         </div>
-
+        
+        {/* Types Of Treatement */}
         <TreatmentTypes />
+        
+        {/* Categories Of Disease */}
         <DiseaseCategories />
+
+
         {/* Traditional Treatement Section For introducing */}
         <div className="hero min-h-screen px-4">
           <div className="hero-content flex-col lg:flex-row">

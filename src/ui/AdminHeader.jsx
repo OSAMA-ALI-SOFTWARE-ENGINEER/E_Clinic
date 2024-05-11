@@ -47,18 +47,24 @@ const AdminHeader = () => {
             </li>
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">daisyUI</a>
+        <div className="flex max-m-[70%] h-16 p-2 ml-2">
+          <img src="/Logo.png" alt="logo" />
+        </div>
+        {/* <a className="btn btn-ghost text-xl">daisyUI☻</a> */}
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal space-x-4 px-1 capitalize">
           <li className=" rounded-md bg-gray-200">
-            <Link to={"/"}>visit website</Link>
+            <Link to={"/dashboard"}>View Dashboard</Link>
           </li>
           <li className=" rounded-md bg-gray-200">
             <Link to={"/add-disease"}>Add disease</Link>
           </li>
           <li className=" rounded-md bg-gray-200">
             <Link to={"/dashboard/subscribers"}>our subscribers list</Link>
+          </li>
+          <li className=" rounded-md bg-gray-200">
+            <Link to={"/"}>visit website</Link>
           </li>
         </ul>
       </div>
