@@ -25,75 +25,80 @@ const TableData = () => {
   if (isError)
     return <ErrorMessage>Something went wrong on the server.</ErrorMessage>;
   return (
-    <div className="overflow-x-auto">
-      <table className="table relative">
-        {/* head */}
-        <thead>
-          <tr>
-            <th></th>
-            <th>Picture</th>
-            <th>Disease name</th>
-            <th>Actions</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          {/* row 1 */}
-          {Diseases?.length === 0 ? (
+    <>
+      <div className="overflow-x-auto">
+        <table className="table">
+          {/* head */}
+          <thead>
             <tr>
-              <td></td>
-              <td></td>
-              <td className=" text-xl font-semibold capitalize text-gray-400">
-                No data found
-              </td>
-              <td></td>
+              <th></th>
+              <th>Picture</th>
+              <th>Disease name</th>
+              <th>Actions</th>
+              <th></th>
             </tr>
-          ) : (
-            Diseases?.map((cur, i) => {
-              return (
-                <tr key={cur.id}>
-                  <th>{i + 1}</th>
-                  <td>
-                    <div className="avatar">
-                      <div className=" h-12 w-12 rounded-md">
-                        <img src={cur.image} alt={cur.name} />
+          </thead>
+          <tbody>
+            {/* row 1 */}
+            {Diseases?.length === 0 ? (
+              <tr>
+                <td></td>
+                <td></td>
+                <td className=" text-xl font-semibold capitalize text-gray-400">
+                  No data found
+                </td>
+                <td></td>
+              </tr>
+            ) : (
+              Diseases?.map((cur, i) => {
+                return (
+                  <tr key={cur.id}>
+                    <th>{i + 1}</th>
+                    <td>
+                      <div className="avatar">
+                        <div className=" h-12 w-12 rounded">
+                          <img
+                            className="border bg-gray-100"
+                            src={cur.image ? cur.image : "/default.jpg"}
+                          />
+                        </div>
                       </div>
-                    </div>
-                  </td>
-                  <td>
-                    <p>{cur.name}</p>
-                  </td>
+                    </td>
+                    <td>
+                      <p>{cur.name}</p>
+                    </td>
 
-                  <th className=" flex items-center ">
-                    <button
-                      onClick={() => handleUpdate(cur.id)}
-                      className="btn btn-ghost btn-xs bg-green-300 hover:bg-green-700 hover:text-white"
-                    >
-                      update
-                    </button>
-                    <button
-                      onClick={() => handleDelete(cur.id)}
-                      className="btn btn-ghost btn-xs bg-red-400 hover:bg-red-700 hover:text-white"
-                      disabled={isDeleting}
-                    >
-                      delete
-                    </button>
-                    <Link
-                      to={"/add-disease"}
-                      className="btn btn-ghost btn-xs bg-sky-400 hover:bg-sky-700 hover:text-white"
-                    >
-                      add
-                    </Link>
-                  </th>
-                </tr>
-              );
-            })
-          )}
-        </tbody>
-      </table>
+                    <th className=" flex items-center gap-2">
+                      <button
+                        onClick={() => handleUpdate(cur.id)}
+                        className=" rounded-md bg-green-300 px-6 py-1.5 capitalize hover:bg-green-700 hover:text-white"
+                      >
+                        update
+                      </button>
 
+                      <button
+                        onClick={() => handleDelete(cur.id)}
+                        className=" rounded-md bg-red-400 px-6 py-1.5 capitalize hover:bg-red-700 hover:text-white"
+                        disabled={isDeleting}
+                      >
+                        delete
+                      </button>
+                      <Link
+                        to={"/add-disease"}
+                        className=" rounded-md bg-sky-400 px-6 py-1.5 capitalize hover:bg-sky-700 hover:text-white"
+                      >
+                        add
+                      </Link>
+                    </th>
+                  </tr>
+                );
+              })
+            )}
+          </tbody>
+        </table>
+      </div>
       {showModal && <Modal editID={editID} setShowModal={setShowModal} />}
-    </div>
+    </>
   );
 };
 

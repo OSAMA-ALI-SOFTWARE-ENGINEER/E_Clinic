@@ -13,7 +13,7 @@ const Login = () => {
   const [email, setEmail] = useState("test@gmail.com");
   const [password, setPassword] = useState("azazkhan");
 
-  const { isLoading, isAuthenticated } = useCurrentUser();
+  const { isLoading, isAuthenticated, isAdmin } = useCurrentUser();
   const { login, isLogging } = useLogin();
 
   const ref = useRef();
@@ -130,10 +130,7 @@ const Login = () => {
           <div className=" flex justify-between">
             <div className=" flex gap-2">
               <p>Have no account?</p>
-              <Link
-                className=" text-sky-500 underline hover:no-underline"
-                to={"/signup"}
-              >
+              <Link className=" text-sky-500 underline hover:no-underline">
                 sign up
               </Link>
             </div>

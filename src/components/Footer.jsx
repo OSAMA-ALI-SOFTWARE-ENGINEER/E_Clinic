@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   faFacebookF,
   faTwitter,
@@ -7,8 +7,27 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
+import { useAddSubscriber } from "./subscribers/useAddSubsriber";
 
 const Footer = () => {
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+
+  const { addSubscriber, isAdding } = useAddSubscriber();
+
+  function handleClick(e) {
+    e.preventDefault();
+    addSubscriber(
+      { username, email },
+      {
+        onSuccess: () => {
+          document.getElementById("my_modal_3").close();
+          setEmail("");
+          setUsername("");
+        },
+      },
+    );
+  }
   return (
     <>
       {/* Subscription Container */}
@@ -31,7 +50,7 @@ const Footer = () => {
             Subscribe News letter
           </button>
           <dialog id="my_modal_3" className="modal">
-            <div className="modal-box">
+            <div className="modal-box max-w-2xl">
               <form method="dialog">
                 {/* if there is a button in form, it will close the modal */}
                 <button className="btn btn-circle btn-ghost btn-sm absolute right-2 top-2">
@@ -39,24 +58,28 @@ const Footer = () => {
                 </button>
                 <h3 className="text-lg font-bold">Join Our Community</h3>
                 <p className="py-4">Get Update with Our Latest Posts</p>
-                <div className="join flex justify-between">
+                <div className="join flex flex-col gap-2">
                   <input
-                    className="input join-item input-bordered w-screen "
-                    placeholder="Your Email ..."
+                    type="text"
+                    className="input join-item input-bordered "
+                    placeholder="Your Name ..."
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
                   />
-                  <button className="btn join-item rounded-r-full bg-cyan-500 hover:bg-cyan-800">
+                  <input
+                    type="email"
+                    className="input join-item input-bordered "
+                    placeholder="Your Email ..."
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                  <button
+                    disabled={isAdding}
+                    onClick={handleClick}
+                    className="btn bg-cyan-500 hover:bg-cyan-800"
+                  >
                     Subscribe
                   </button>
-                </div>
-                <div className="form-control">
-                  <label className="label cursor-pointer justify-start">
-                    <input
-                      type="checkbox"
-                      defaultChecked
-                      className="checkbox-accent checkbox"
-                    />
-                    <span className="label-text">Remember me</span>
-                  </label>
                 </div>
               </form>
             </div>

@@ -41,7 +41,7 @@ export async function createUser({ name, email, password, avatar }) {
       data: {
         name,
         avatar,
-        isAdmin: true,
+        isAdmin: false,
       },
     },
   });

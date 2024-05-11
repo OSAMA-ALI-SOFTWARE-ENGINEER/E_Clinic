@@ -13,7 +13,7 @@ const AdminHeader = () => {
   if (isOuting) return <p>loading...</p>;
 
   return (
-    <header className="navbar bg-gray-100">
+    <header className="shadow-shadowTwo navbar sticky top-0 z-20 mb-6 bg-gray-100">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -58,7 +58,7 @@ const AdminHeader = () => {
             <Link to={"/add-disease"}>Add disease</Link>
           </li>
           <li className=" rounded-md bg-gray-200">
-            <a>manage treatment</a>
+            <Link to={"/dashboard/subscribers"}>our subscribers list</Link>
           </li>
         </ul>
       </div>

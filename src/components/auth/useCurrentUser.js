@@ -16,5 +16,6 @@ export function useCurrentUser() {
     isLoading,
     isError,
     isAuthenticated: User?.role === "authenticated",
+    isAdmin: User?.user_metadata.isAdmin,
   };
 }
