@@ -98,14 +98,14 @@ const Footer = () => {
           </p>
         </aside>
         <nav>
-          <h6 className="footer-title">Services</h6>
-          <a className="link-hover link">Branding</a>
+          <h6 className="footer-title">Disease Types</h6>
+          <a className="link-hover link" to="#">Branding</a>
           <a className="link-hover link">Design</a>
           <a className="link-hover link">Marketing</a>
           <a className="link-hover link">Advertisement</a>
         </nav>
         <nav>
-          <h6 className="footer-title">Company</h6>
+          <h6 className="footer-title">Treatment Types</h6>
           <a className="link-hover link">About us</a>
           <a className="link-hover link">Contact</a>
           <a className="link-hover link">Jobs</a>
@@ -120,8 +120,13 @@ const Footer = () => {
       </footer>
       <div className="mt-10 flex flex-col items-center justify-center">
         <div className="text-grey-200 text-center text-lg ">
-          Developed and Design For FYP
-          <div></div>
+          Non-Copy Right &copy; 2024. All Rights Reserved.
+          <div className="flex items-center justify-center gap-2">
+          <FontAwesomeIcon icon={faFacebookF} className="bg-sky-600 p-2 border rounded-xl hover:bg-sky-700 hover:text-white"/>
+            <FontAwesomeIcon icon={faTiktok} className="p-2 border rounded-xl bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 "/>
+            <FontAwesomeIcon icon={faTwitter} className="bg-cyan-600 text-white p-2 border rounded-xl hover:bg-sky-800 hover:text-black"/>
+            <FontAwesomeIcon icon={faYoutube} className="p-2 border rounded-xl bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 "/>
+          </div>
         </div>
       </div>
     </>
