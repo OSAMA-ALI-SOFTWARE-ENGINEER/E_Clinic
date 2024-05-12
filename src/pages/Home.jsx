@@ -4,7 +4,7 @@ import Article from "../components/Article";
 import DiseaseCategories from "../components/DiseaseCategories";
 import ReviewCarousel from "../components/ReviewCarousel";
 import TreatmentTypes from "../components/TreatmentTypes";
-import DiseaseSearch from "../components/TreatementFilterSection/TreatmentFilterSectionMain";
+
 import Header from "../components/Header";
 
 function Home() {
@@ -28,8 +28,8 @@ function Home() {
               )}
 
               <Link
-                className=" rounded-md border bg-cyan-400 px-6 py-1.5"
-                to={DiseaseSearch}
+                className=" rounded-md border bg-cyan-500 hover:bg-sky-900 hover:text-white px-6 py-1.5"
+                to={'./DiseaseSearch'}
               >
                 Get Search
               </Link>
@@ -39,9 +39,14 @@ function Home() {
             </div>
           </div>
         </div>
-
+        
+        {/* Types Of Treatement */}
         <TreatmentTypes />
+        
+        {/* Categories Of Disease */}
         <DiseaseCategories />
+
+
         {/* Traditional Treatement Section For introducing */}
         <div className="hero min-h-screen px-4">
           <div className="hero-content flex-col lg:flex-row">

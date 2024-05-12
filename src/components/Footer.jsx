@@ -98,18 +98,20 @@ const Footer = () => {
           </p>
         </aside>
         <nav>
-          <h6 className="footer-title">Services</h6>
-          <a className="link-hover link">Branding</a>
-          <a className="link-hover link">Design</a>
-          <a className="link-hover link">Marketing</a>
-          <a className="link-hover link">Advertisement</a>
+          <h6 className="footer-title">Disease Types</h6>
+          <a className="link-hover link" to="#">
+            Heart Disease
+          </a>
+          <a className="link-hover link">Kedney Disease</a>
+          <a className="link-hover link">ENT Disease</a>
+          <a className="link-hover link">Cancer Disease</a>
         </nav>
         <nav>
-          <h6 className="footer-title">Company</h6>
-          <a className="link-hover link">About us</a>
-          <a className="link-hover link">Contact</a>
-          <a className="link-hover link">Jobs</a>
-          <a className="link-hover link">Press kit</a>
+          <h6 className="footer-title">Treatment Types</h6>
+          <a className="link-hover link">Doctor Treatment</a>
+          <a className="link-hover link">Herbal Treatment</a>
+          <a className="link-hover link">Traditional Treatement</a>
+          <a className="link-hover link">Homeopathic Treatment</a>
         </nav>
         <nav>
           <h6 className="footer-title">Legal</h6>
@@ -118,10 +120,27 @@ const Footer = () => {
           <a className="link-hover link">Cookie policy</a>
         </nav>
       </footer>
-      <div className="mt-10 flex flex-col items-center justify-center">
+      <div className="border-t-[1px] flex flex-col items-center justify-center bg-base-200">
         <div className="text-grey-200 text-center text-lg ">
-          Developed and Design For FYP
-          <div></div>
+          Non-Copy Right &copy; 2024. All Rights Reserved.
+          <div className="flex items-center justify-center gap-2">
+            <FontAwesomeIcon
+              icon={faFacebookF}
+              className="rounded-xl border bg-sky-500 p-2 hover:bg-sky-700 hover:text-white"
+            />
+            <FontAwesomeIcon
+              icon={faTiktok}
+              className="rounded-xl border bg-gradient-to-r from-sky-400 to-cyan-500 p-2 hover:from-sky-700 hover:to-sky-700 hover:text-white"
+            />
+            <FontAwesomeIcon
+              icon={faTwitter}
+              className="rounded-xl border bg-sky-500 p-2 hover:bg-sky-800 hover:text-white"
+            />
+            <FontAwesomeIcon
+              icon={faYoutube}
+              className="rounded-xl border bg-gradient-to-r from-sky-400 to-cyan-500 p-2 hover:from-red-500 hover:to-red-500 hover:text-white"
+            />
+          </div>
         </div>
       </div>
     </>
