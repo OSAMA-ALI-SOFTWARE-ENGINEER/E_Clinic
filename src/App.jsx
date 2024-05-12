@@ -18,6 +18,7 @@ import Subscribers from "./components/subscribers/Subscribers";
 import NotFoundPage from "./pages/NotFound";
 
 import DiseaseSearch from "./components/TreatementFilterSection/TreatmentFilterSectionMain";
+import SingleDisease from "./pages/SingleDisease";
 
 const App = () => {
   const queryClient = new QueryClient({
@@ -61,7 +62,7 @@ const App = () => {
           <Route path="/Disease" element={<Disease />} />
           <Route path="/Treatment" element={<Treatment />} />
           <Route path="/About" element={<About />} />
-      
+
           <Route path="/add-disease" element={<AddDisease />} />
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<AdminPanel />} />
@@ -69,6 +70,7 @@ const App = () => {
 
           {/* <Route path="/signup" element={<Signup />} /> */}
           <Route exact path="/DiseaseSearch" element={<DiseaseSearch />} />
+          <Route path="/disease/:id" element={<SingleDisease />} />
 
           {/* 404 page */}
           <Route path="*" element={<NotFoundPage />} />
