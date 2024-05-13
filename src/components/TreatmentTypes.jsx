@@ -3,7 +3,7 @@ import Card from "../ui/Card";
 import { useDiasease } from "./TreatementFilterSection/useDiseases";
 
 
-const treatmentTpes = [
+const treatmentTypes = [
   {
     img: '/doctor.png',
     name:'Doctor treatment',
@@ -30,7 +30,7 @@ const TreatmentTypes = () => {
       </h2>
 
       <div className="  grid grid-cols-1 items-center max-w-[1100px] mx-auto justify-item-center gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-3">
-        {treatmentTpes?.map((cur, i) => (
+        {treatmentTypes?.map((cur, i) => (
           <Card cur={cur} key={i} />
         ))}
       </div>

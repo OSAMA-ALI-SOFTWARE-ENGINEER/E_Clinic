@@ -96,7 +96,7 @@ const Header = () => {
             </button>
           ) : (
             <Link
-              className=" rounded-md border border-none bg-cyan-500 px-6 py-1.5 font-medium text-cyan-100 outline-none transition-all duration-200 hover:shadow-lg active:scale-90"
+              className=" rounded-md border border-none bg-cyan-500 hover:bg-sky-800 hover:text-white px-6 py-1.5 font-medium outline-none transition-all duration-200 hover:shadow-lg active:scale-90"
               to={"/login"}
             >
               Login
@@ -143,14 +143,14 @@ const Header = () => {
                   </a>
                 ))}
               </div>
-              <div className="py-6">
+              {/* <div className="py-6">
                 <a
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Subscribe
                 </a>
-              </div>
+              </div> */}
             </div>
           </div>
         </Dialog.Panel>

@@ -12,13 +12,15 @@ import AddDisease from "./pages/AddDisease";
 import Login from "./pages/Login";
 import AdminPanel from "./dashboard/AdminPanel";
 import { Toaster } from "react-hot-toast";
-import Signup from "./pages/Signup";
-import AdminHeader from "./ui/AdminHeader";
+// import Signup from "./pages/Signup";
+// import AdminHeader from "./ui/AdminHeader";
 import Subscribers from "./components/subscribers/Subscribers";
 import NotFoundPage from "./pages/NotFound";
 
 import DiseaseSearch from "./components/TreatementFilterSection/TreatmentFilterSectionMain";
 import SingleDisease from "./pages/SingleDisease";
+
+// import AdminDashboard from "./dashboard/AdminDashboard"
 
 const App = () => {
   const queryClient = new QueryClient({
@@ -29,7 +31,10 @@ const App = () => {
     },
   });
 
+
   return (
+
+
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools initialIsOpen={false} />
 
@@ -55,6 +60,7 @@ const App = () => {
           },
         }}
       />
+       
       <BrowserRouter>
         <Routes>
           {/* Routes */}
@@ -67,6 +73,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<AdminPanel />} />
           <Route path="/dashboard/subscribers" element={<Subscribers />} />
+          {/* <Route path="/admindashboard/" element={<AdminDashboard />} /> */}
 
           {/* <Route path="/signup" element={<Signup />} /> */}
           <Route exact path="/DiseaseSearch" element={<DiseaseSearch />} />
