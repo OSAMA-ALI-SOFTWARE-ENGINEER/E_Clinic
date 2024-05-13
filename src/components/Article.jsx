@@ -18,7 +18,7 @@ const Article = () => {
       </div>
 
       <div className=" flex justify-center">
-        <Button>See more</Button>
+        <Button className="btn btn-primary bg-sky-400 hover:bg-sky-800 text-black hover:text-white">See more</Button>
       </div>
     </div>
   );

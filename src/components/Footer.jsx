@@ -90,7 +90,7 @@ const Footer = () => {
       {/* Main Footer Section */}
       <footer className="footer bg-base-200 p-10 text-base-content">
         <aside>
-          <img className="h-24 w-52" src="./Logo.png" alt="logo" />
+          <img className="h-24 w-52" src="/Logo.png" alt="logo" />
           <p>
             ACME Industries Ltd.
             <br />

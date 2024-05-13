@@ -5,7 +5,7 @@ const CardArticle = () => {
     <div className="card bg-base-100 shadow-xl">
       <figure className="p-3">
         <img
-          src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+          src="/Chronic disease.png"
           alt="Shoes"
           className="rounded-md"
         />
@@ -16,7 +16,7 @@ const CardArticle = () => {
           <div className="badge badge-outline">Products</div>
         </div>
         <h2 className="card-title">
-          Shoes!
+         About Cancer!
           <div className="badge badge-secondary">NEW</div>
         </h2>
         <p>If a dog chews shoes whose shoes does he choose?</p>
