@@ -7,7 +7,7 @@ const Disease = () => {
   return (
     <>
       <Header />
-      <div className="text-dark h-80 bg-cover bg-center p-6">
+      <div className="text-dark h-80 bg-cover bg-center">
         <img src={dises} alt="img" className="h-72 w-full" />
       </div>
       <div className="container ">
