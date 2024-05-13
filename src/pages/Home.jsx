@@ -11,36 +11,37 @@ function Home() {
   return (
     <>
       <Header />
-      <div className=" bg-cyan-200">
-        <div>
-          <div className="flex h-scree w-full bg-zinc-200 pt-1">
-            <div className="textstructure mt-52 px-20 ">
-              {["We Provide ", "Disease's", "Different Solution"].map(
-                (item, index) => {
-                  return (
-                    <div className="masker" key={index}>
-                      <h1 className="font-['Founders_Grotesk_Condensed'] text-5xl font-semibold uppercase  leading-[4vw] text-black">
-                        {item}
-                      </h1>
-                    </div>
-                  );
-                },
-              )}
-              <div className="mt-12 ">
-
+      <div className="bg-cyan-200  ">
+      <div>
+        <div className="flex flex-col-reverse  md:flex-row w-full bg-zinc-200 pt-1  ">
+          <div className="textstructure h-full leading-3 md:mt-52 px-6 md:px-8 ">
+            {["We Provide ", "Disease's", "Different Solution"].map(
+              (item, index) => {
+                return (
+                  <div className="masker" key={index}>
+                    <h1 className="font-['Founders_Grotesk_Condensed']  text-3xl md:text-3xl lg:text-5xl font-semibold uppercase text-center md:text-left leading-[8vw] md:leading-normal text-black ">
+                      {item}
+                    </h1>
+                  </div>
+                );
+              }
+            )}
+            <div className="mt-12 text-center  md:text-left">
               <Link
-                className=" rounded-md border bg-cyan-500 hover:bg-sky-900 hover:text-white px-6 py-1.5"
+                className="rounded-md border bg-cyan-500 hover:bg-sky-900 hover:text-white px-6 py-1.5"
                 to={'./DiseaseSearch'}
-                >
+              >
                 Get Search
               </Link>
-                </div>
-            </div>
-            <div className="container flex w-1/3 ">
-              <img className=" " src={hero} alt="" />
             </div>
           </div>
+          <div className="hidden  md:block container  justify-center w-full md:w-2/4">
+            <img className="max-w-full h-auto" src={hero} alt="Hero" />
+          </div>
         </div>
+      </div>
+    </div>
+    
         
         {/* Types Of Treatement */}
         <TreatmentTypes />
@@ -91,7 +92,7 @@ function Home() {
             </div>
           </div>
         </div>
-      </div>
+      
     </>
   );
 }

@@ -32,7 +32,7 @@ const Header = () => {
 
   if (isLoading || isOuting) return <p>loading...</p>;
   return (
-    <header className=" bg-zinc-300">
+    <header className=" bg-zinc-300 overflow-hidden">
       <nav
         className="flex items-center justify-between p-6 lg:px-8"
         aria-label="Global"
