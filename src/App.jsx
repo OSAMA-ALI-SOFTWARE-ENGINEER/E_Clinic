@@ -19,8 +19,9 @@ import NotFoundPage from "./pages/NotFound";
 
 import DiseaseSearch from "./components/TreatementFilterSection/TreatmentFilterSectionMain";
 import SingleDisease from "./pages/SingleDisease";
+// Dashboard Links
 
-// import AdminDashboard from "./dashboard/AdminDashboard"
+
 
 const App = () => {
   const queryClient = new QueryClient({
@@ -73,12 +74,16 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<AdminPanel />} />
           <Route path="/dashboard/subscribers" element={<Subscribers />} />
-          {/* <Route path="/admindashboard/" element={<AdminDashboard />} /> */}
+     
 
           {/* <Route path="/signup" element={<Signup />} /> */}
           <Route exact path="/DiseaseSearch" element={<DiseaseSearch />} />
           <Route path="/disease/:id" element={<SingleDisease />} />
 
+{/* Dashboard Access Routes */}
+      {/* <Route path="/" element={<Navigate to="/admin" replace />} /> */}
+
+      
           {/* 404 page */}
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
