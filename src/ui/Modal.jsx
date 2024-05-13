@@ -53,6 +53,12 @@ const Modal = ({ setShowModal, editID }) => {
           <h1 className=" mb-6 text-center text-xl font-medium capitalize text-cyan-500">
             Update disease {`"${Disease?.name}"`}
           </h1>
+          <button
+          onClick={() => navigate(-1)}
+          className="btn btn-circle btn-ghost btn-sm absolute right-2 top-2"
+        >
+          ✕
+        </button>
           <FormRow lable={"Disease name"} error={errors?.name?.message}>
             <input
               type="text"
@@ -64,11 +70,13 @@ const Modal = ({ setShowModal, editID }) => {
               })}
             />
           </FormRow>
-          <FormRow lable={"Disease Content"}>
+
+              {/* Disease Overview */}
+          <FormRow lable={"Disease Overview"}>
             <Controller
-              name="content" // Set the name for React Hook Form
+              name="overview" // Set the name for React Hook Form
               control={control}
-              defaultValue={Disease?.content}
+              defaultValue={Disease?.overview}
               // disabled={isAdding}
               render={({ field }) => (
                 <ReactQuill
@@ -80,6 +88,78 @@ const Modal = ({ setShowModal, editID }) => {
               )}
             />
           </FormRow>
+
+          {/* Disease Symptoms */}
+          <FormRow lable={"Disease Symptoms"}>
+            <Controller
+              name="symptoms" // Set the name for React Hook Form
+              control={control}
+              defaultValue={Disease?.symptoms}
+              // disabled={isAdding}
+              render={({ field }) => (
+                <ReactQuill
+                  modules={module}
+                  value={field.value}
+                  onChange={(value) => field.onChange(value)}
+                  className=" rounded-xl border-none bg-gray-100 shadow-xl outline-none disabled:cursor-not-allowed disabled:bg-cyan-500"
+                />
+              )}
+            />
+          </FormRow>
+
+          {/* Disease Causes */}
+          <FormRow lable={"Disease Causes"}>
+            <Controller
+              name="causes" // Set the name for React Hook Form
+              control={control}
+              defaultValue={Disease?.causes}
+              // disabled={isAdding}
+              render={({ field }) => (
+                <ReactQuill
+                  modules={module}
+                  value={field.value}
+                  onChange={(value) => field.onChange(value)}
+                  className=" rounded-xl border-none bg-gray-100 shadow-xl outline-none disabled:cursor-not-allowed disabled:bg-cyan-500"
+                />
+              )}
+            />
+          </FormRow>
+
+          {/* Disease Prevention */}
+          <FormRow lable={"Disease Prevention"}>
+            <Controller
+              name="prevention" // Set the name for React Hook Form
+              control={control}
+              defaultValue={Disease?.prevention}
+              // disabled={isAdding}
+              render={({ field }) => (
+                <ReactQuill
+                  modules={module}
+                  value={field.value}
+                  onChange={(value) => field.onChange(value)}
+                  className=" rounded-xl border-none bg-gray-100 shadow-xl outline-none disabled:cursor-not-allowed disabled:bg-cyan-500"
+                />
+              )}
+            />
+          </FormRow>
+          {/* Disease Symptoms */}
+          <FormRow lable={"Disease Treatment"}>
+            <Controller
+              name="treatment" // Set the name for React Hook Form
+              control={control}
+              defaultValue={Disease?.treatment}
+              // disabled={isAdding}
+              render={({ field }) => (
+                <ReactQuill
+                  modules={module}
+                  value={field.value}
+                  onChange={(value) => field.onChange(value)}
+                  className=" rounded-xl border-none bg-gray-100 shadow-xl outline-none disabled:cursor-not-allowed disabled:bg-cyan-500"
+                />
+              )}
+            />
+          </FormRow>
+          
 
           <FormRow lable={"Disease image"}>
             <input

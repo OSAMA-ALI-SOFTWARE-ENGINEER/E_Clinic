@@ -18,7 +18,7 @@ const AdminPanel = () => {
 
   if (isAuthenticated && !isLoading)
     return (
-      <div className="grid grid-cols-[20rem_1fr]">
+      <div className="grid grid-cols-[15rem_1fr]">
         <Sidebar />
 
         <div>

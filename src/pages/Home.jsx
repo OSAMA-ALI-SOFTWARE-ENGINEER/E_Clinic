@@ -12,9 +12,9 @@ function Home() {
     <>
       <Header />
       <div className="bg-cyan-200  ">
-      <div>
+   
         <div className="flex flex-col-reverse  md:flex-row w-full bg-zinc-200 pt-1  ">
-          <div className="textstructure h-full leading-3 md:mt-52 px-6 md:px-8 ">
+          <div className="textstructure h-[33%] leading-3 md:mt-32 md:w-[60%] px-6 md:px-8 ">
             {["We Provide ", "Disease's", "Different Solution"].map(
               (item, index) => {
                 return (
@@ -35,12 +35,12 @@ function Home() {
               </Link>
             </div>
           </div>
-          <div className="hidden  md:block container  justify-center w-full md:w-2/4">
+          <div className="hidden  md:block container mx-32 justify-center w-screen md:w-[35%]">
             <img className="max-w-full h-auto" src={hero} alt="Hero" />
           </div>
         </div>
-      </div>
-    </div>
+     
+   
     
         
         {/* Types Of Treatement */}
@@ -92,7 +92,7 @@ function Home() {
             </div>
           </div>
         </div>
-      
+      </div>
     </>
   );
 }

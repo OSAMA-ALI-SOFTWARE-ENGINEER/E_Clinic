@@ -39,6 +39,7 @@ const AddDisease = () => {
         onSubmit={handleSubmit(onSubmit)}
         className=" relative flex max-w-[80%] flex-col gap-4 rounded-md bg-slate-200 p-6 font-primary shadow-xl"
       >
+      <h2 className="text-center text-xl font-bold text-sky-500">Add New Disease</h2>
         <button
           onClick={() => navigate(-1)}
           className="btn btn-circle btn-ghost btn-sm absolute right-2 top-2"

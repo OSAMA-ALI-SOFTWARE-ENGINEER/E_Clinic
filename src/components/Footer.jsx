@@ -32,7 +32,7 @@ const Footer = () => {
   return (
     <>
       {/* Subscription Container */}
-      <div className="px-18 mx-24 flex justify-between rounded-lg border bg-base-200 p-6 ">
+      <div className="px-18 mt-8 mx-24 flex justify-between rounded-lg border bg-base-200 p-6 ">
         <div className="justify-start ">
           <h2 className="text-2xl text-secondary">
             Join Our Community For More Updates
