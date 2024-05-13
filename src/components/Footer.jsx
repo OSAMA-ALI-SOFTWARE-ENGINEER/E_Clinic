@@ -17,6 +17,7 @@ const Footer = () => {
 
   function handleClick(e) {
     e.preventDefault();
+    if (!username || !email) return;
     addSubscriber(
       { username, email },
       {
@@ -53,7 +54,11 @@ const Footer = () => {
             <div className="modal-box max-w-2xl">
               <form method="dialog">
                 {/* if there is a button in form, it will close the modal */}
-                <button className="btn btn-circle btn-ghost btn-sm absolute right-2 top-2">
+                <button
+                  type="reset"
+                  onClick={() => document.getElementById("my_modal_3").close()}
+                  className="btn btn-circle btn-ghost btn-sm absolute right-2 top-2"
+                >
                   ✕
                 </button>
                 <h3 className="text-lg font-bold">Join Our Community</h3>
@@ -120,7 +125,7 @@ const Footer = () => {
           <a className="link-hover link">Cookie policy</a>
         </nav>
       </footer>
-      <div className="border-t-[1px] flex flex-col items-center justify-center bg-base-200">
+      <div className="flex flex-col items-center justify-center border-t-[1px] bg-base-200">
         <div className="text-grey-200 text-center text-lg ">
           Non-Copy Right &copy; 2024. All Rights Reserved.
           <div className="flex items-center justify-center gap-2">
