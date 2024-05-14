@@ -6,7 +6,7 @@ import { useCurrentUser } from "../components/auth/useCurrentUser";
 import toast from "react-hot-toast";
 import Sidebar from "./Sidebar";
 import Card from "./dashboardCards/Card";
-import { HiChatBubbleBottomCenter, HiFolder, HiEnvelopeOpen, HiIdentification   } from "react-icons/hi2";
+import {HiFolder, HiEnvelopeOpen, HiIdentification ,HiMiniSquare2Stack  } from "react-icons/hi2";
 
 
 
@@ -30,7 +30,7 @@ const AdminPanel = () => {
             
             <Card
               icon={
-                <HiChatBubbleBottomCenter />
+                <HiMiniSquare2Stack />
                 
               }
             />
