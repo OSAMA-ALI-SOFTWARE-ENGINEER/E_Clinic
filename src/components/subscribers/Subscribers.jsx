@@ -20,7 +20,7 @@ const Subscribers = () => {
 
   return (
     <div>
-      <AdminHeader />
+      {/* <AdminHeader /> */}
       <div className="mx-auto my-9 max-w-5xl overflow-x-auto">
         <table className="table ">
           {/* head */}

@@ -19,9 +19,9 @@ import NotFoundPage from "./pages/NotFound";
 
 import DiseaseSearch from "./components/TreatementFilterSection/TreatmentFilterSectionMain";
 import SingleDisease from "./pages/SingleDisease";
+import Charts from "./dashboard/Charts";
+import TableData from "./dashboard/TableData";
 // Dashboard Links
-
-
 
 const App = () => {
   const queryClient = new QueryClient({
@@ -32,10 +32,7 @@ const App = () => {
     },
   });
 
-
   return (
-
-
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools initialIsOpen={false} />
 
@@ -61,7 +58,7 @@ const App = () => {
           },
         }}
       />
-       
+
       <BrowserRouter>
         <Routes>
           {/* Routes */}
@@ -72,18 +69,19 @@ const App = () => {
 
           <Route path="/add-disease" element={<AddDisease />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/dashboard" element={<AdminPanel />} />
-          <Route path="/dashboard/subscribers" element={<Subscribers />} />
-     
+          <Route path="/dashboard" element={<AdminPanel />}>
+            <Route index path="/dashboard" element={<Charts />} />
+            <Route path="/dashboard/subscribers" element={<Subscribers />} />
+            <Route path="/dashboard/all-disease" element={<TableData />} />
+          </Route>
 
           {/* <Route path="/signup" element={<Signup />} /> */}
           <Route exact path="/DiseaseSearch" element={<DiseaseSearch />} />
           <Route path="/disease/:id" element={<SingleDisease />} />
 
-{/* Dashboard Access Routes */}
-      {/* <Route path="/" element={<Navigate to="/admin" replace />} /> */}
+          {/* Dashboard Access Routes */}
+          {/* <Route path="/" element={<Navigate to="/admin" replace />} /> */}
 
-      
           {/* 404 page */}
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
