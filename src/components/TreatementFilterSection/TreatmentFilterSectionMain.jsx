@@ -8,7 +8,7 @@ import AllDiseases from "./AllDiseases";
 
 const TreatmentFilterSection = () => {
   const [btnContent, setBtnContent] = useState("");
-  const [show, setShow] = useState(false);
+  const [searchInput, setSearchInput] = useState("");
 
   return (
     <>
@@ -18,7 +18,10 @@ const TreatmentFilterSection = () => {
         <div className=" mx-auto max-w-[1200px]">
           <BreadCrum />
           <div className=" grid grid-cols-1 gap-x-20 sm:grid-cols-2 sm:justify-items-center">
-            <Content />
+            <Content
+              searchInput={searchInput}
+              setSearchInput={setSearchInput}
+            />
             <FilterButtons
               btnContent={btnContent}
               setBtnContent={setBtnContent}
@@ -27,7 +30,7 @@ const TreatmentFilterSection = () => {
         </div>
       </div>
 
-      <AllDiseases />
+      <AllDiseases searchInput={searchInput} />
     </>
   );
 };

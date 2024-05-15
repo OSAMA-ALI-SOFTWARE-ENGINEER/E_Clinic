@@ -12,52 +12,47 @@ function Home() {
     <>
       <Header />
       <div className="bg-cyan-200  ">
-   
-        <div className="flex flex-col-reverse  md:flex-row w-full bg-zinc-200 pt-1  ">
-          <div className="textstructure h-[33%] leading-3 md:mt-32 md:w-[60%] px-6 md:px-8 ">
-            {["We Provide ", "Disease's", "Different Solution"].map(
+        <div className="flex w-full  flex-col-reverse bg-zinc-200 pt-1 md:flex-row  ">
+          <div className="textstructure flex h-[50vh] flex-col items-center justify-center px-6 md:mt-32 md:h-[33%] md:w-[60%] md:px-8 ">
+            {/* {["We Provide ", "Disease's", "Different Solution"].map(
               (item, index) => {
                 return (
-                  <div className="masker" key={index}>
-                    <h1 className="font-['Founders_Grotesk_Condensed']  text-3xl md:text-3xl lg:text-5xl font-semibold uppercase text-center md:text-left leading-[8vw] md:leading-normal text-black ">
-                      {item}
-                    </h1>
-                  </div>
-                );
-              }
-            )}
+                  <div className="masker" key={index}> */}
+            <h1 className=" text-center  font-['Founders_Grotesk_Condensed'] text-xl font-semibold uppercase leading-8 text-black md:text-left md:text-3xl md:leading-[4rem] lg:text-5xl ">
+              We Provide Diseases, Different Solution
+            </h1>
+            {/* </div> */}
+            {/* );
+              },
+            )} */}
             <div className="mt-12 text-center  md:text-left">
               <Link
-                className="rounded-md border bg-cyan-500 hover:bg-sky-900 hover:text-white px-6 py-1.5"
-                to={'./DiseaseSearch'}
+                className="rounded-md border bg-cyan-500 px-6 py-1.5 hover:bg-sky-900 hover:text-white"
+                to={"./DiseaseSearch"}
               >
                 Get Search
               </Link>
             </div>
           </div>
-          <div className="hidden  md:block container mx-32 justify-center w-screen md:w-[35%]">
-            <img className="max-w-full h-auto" src={hero} alt="Hero" />
+          <div className="container  mx-32 hidden w-screen justify-center md:block md:w-[35%]">
+            <img className="h-auto max-w-full" src={hero} alt="Hero" />
           </div>
         </div>
-     
-   
-    
-        
+
         {/* Types Of Treatement */}
         <TreatmentTypes />
-        
+
         {/* Categories Of Disease */}
         <DiseaseCategories />
 
-
         {/* Traditional Treatement Section For introducing */}
-        <div className="hero min-h-screen  left-[50%] right-[50%] px-4">
+        <div className="hero left-[50%]  right-[50%] min-h-screen px-4">
           <div className=" hero-content flex-col lg:flex-row">
             <img
               src="./doctor.png"
               className="max-w-sm rounded-lg shadow-2xl"
             />
-            <div className="px-26 text-center lg:text-left md:text-center">
+            <div className="px-26 text-center md:text-center lg:text-left">
               <h1 className="text-5xl font-bold">Doctor's Treatment!</h1>
               <p className="py-6">
                 Provident cupiditate voluptatem et in. Quaerat fugiat ut

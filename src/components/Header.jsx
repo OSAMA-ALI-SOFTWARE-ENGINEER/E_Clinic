@@ -1,12 +1,11 @@
-
 import React from "react";
 // import { Link } from 'react-router-dom';
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { Link, useNavigate } from "react-router-dom";
-import { useCurrentUser } from "./auth/useCurrentUser";
-import { useLogOut } from "./auth/useLogout";
+import { XMarkIcon } from "@heroicons/react/24/outline";
+import Navbar from "./navbar/Navbar";
+import AuthNav from "./navbar/AuthNav";
+import Logo from "../ui/Logo";
 
 // import Logo from ""
 const links = [
@@ -19,94 +18,16 @@ const links = [
 ];
 
 const Header = () => {
-  const navigate = useNavigate();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const { isAuthenticated, isLoading } = useCurrentUser();
-  const { logout, isOuting } = useLogOut();
-
-  console.log(isAuthenticated);
-  function handleLogout() {
-    logout();
-  }
-
-  if (isLoading || isOuting) return <p>loading...</p>;
   return (
-    <header className=" bg-zinc-300 overflow-hidden">
-      <nav
-        className="flex items-center justify-between p-6 lg:px-8"
-        aria-label="Global"
-      >
-        <div className="flex lg:flex-1">
-          <a href="/" className="">
-            <span className="sr-only">E_Clinic</span>
-            <img className="h-12 w-auto" src={"/Logo.png"} alt="" />
-          </a>
-        </div>
-        <div className="flex lg:hidden">
-          <button
-            type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-            onClick={() => setMobileMenuOpen(true)}
-          >
-            <span className="sr-only">Open main menu</span>
-            <Bars3Icon className="h-6 w-6" aria-hidden="true" />
-          </button>
-        </div>
-        <div className="hidden lg:flex lg:gap-x-12">
-          <Link
-            className="text-sm  font-semibold leading-6 text-gray-900"
-            to={"/"}
-          >
-            home
-          </Link>
-          <Link
-            className="text-sm  font-semibold leading-6 text-gray-900"
-            to={"/disease"}
-          >
-            disease
-          </Link>
-          <Link
-            className="text-sm  font-semibold leading-6 text-gray-900"
-            to={"/treatment"}
-          >
-            treatment
-          </Link>
-          <Link
-            className="text-sm  font-semibold leading-6 text-gray-900"
-            to={"/about"}
-          >
-            about
-          </Link>
-        </div>
-        <div className="hidden items-center gap-4 lg:flex lg:flex-1 lg:justify-end">
-          {/* <Link
-            className=" rounded-sm bg-cyan-400 px-4 py-2 font-primary font-medium capitalize text-cyan-900 shadow-lg duration-200 hover:shadow-none active:scale-90"
-            to={"/add-disease"}
-          >
-            Add new Disease
-          </Link> */}
-          {isAuthenticated && !isLoading ? (
-            <button
-              disabled={isOuting}
-              onClick={handleLogout}
-              className=" rounded-md border border-none bg-red-600 px-6 py-1.5 font-medium capitalize text-cyan-100 outline-none transition-all duration-300 hover:shadow-xl active:scale-90 disabled:cursor-not-allowed disabled:opacity-50"
-            >
-              logout
-            </button>
-          ) : (
-            <Link
-              className=" rounded-md border border-none bg-cyan-500 hover:bg-sky-800 hover:text-white px-6 py-1.5 font-medium outline-none transition-all duration-200 hover:shadow-lg active:scale-90"
-              to={"/login"}
-            >
-              Login
-            </Link>
-          )}
-        </div>
-      </nav>
+    <header className=" flex items-center justify-between  bg-zinc-300">
+      <Logo />
+      <Navbar />
+      <AuthNav />
       <Dialog
         as="div"
-        className="lg:hidden"
+        className="block lg:hidden"
         open={mobileMenuOpen}
         onClose={setMobileMenuOpen}
       >
@@ -115,11 +36,7 @@ const Header = () => {
           <div className="flex items-center justify-between">
             <a href="" className="-m-1.5 p-1.5">
               <span className="sr-only">E_Clinic</span>
-              <img
-                className="h-8 w-auto"
-                src="/Logo.png"
-                alt="Logo"
-              />
+              <img className="h-8 w-auto" src="/Logo.png" alt="Logo" />
             </a>
             <button
               type="button"

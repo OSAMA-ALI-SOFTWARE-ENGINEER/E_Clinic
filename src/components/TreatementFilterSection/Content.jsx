@@ -1,7 +1,7 @@
 import React from "react";
 import SearchBox from "../../ui/SearchBox";
 
-const Heading = () => {
+const Heading = ({ searchInput, setSearchInput }) => {
   return (
     <div className="text-white">
       <div className=" space-y-4">
@@ -14,7 +14,7 @@ const Heading = () => {
       </div>
       <div className=" mt-16  space-y-2">
         <p className="text-lg">Search diseases & conditions</p>
-        <SearchBox />
+        <SearchBox searchInput={searchInput} setSearchInput={setSearchInput} />
       </div>
     </div>
   );

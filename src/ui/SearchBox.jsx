@@ -1,10 +1,12 @@
 import React from "react";
 
-const SearchBox = () => {
+const SearchBox = ({ searchInput, setSearchInput }) => {
   return (
     <div className=" relative h-14">
       <input
         type="text"
+        value={searchInput}
+        onChange={(e) => setSearchInput(e.target.value)}
         className=" absolute left-0 top-0 h-full w-full rounded-full border-2 border-none bg-white pl-14 pr-4 text-gray-700 outline-none focus:ring-2 focus:ring-sky-600 focus:ring-offset-4"
         placeholder="enter"
       />

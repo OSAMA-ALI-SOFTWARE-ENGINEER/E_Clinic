@@ -1,9 +1,9 @@
 import React from "react";
-import Title_section from "../ui/Title_section";
 import Tcard from "../ui/Tcard";
 
 // import TreatmentFilterSection from "../components/TreatementFilterSection/TreatmentFilterSectionMain";
 import Header from "../components/Header";
+import TitleSection from "../ui/TitleSection";
 
 function Treatment() {
   return (
@@ -11,7 +11,7 @@ function Treatment() {
       <Header />
       <div>
         {/* <TreatmentFilterSection /> */}
-        <Title_section />
+        <TitleSection title={"Types of Treatment"} />
         <Tcard />
         {/* <Tcard />
       <Tcard /> */}

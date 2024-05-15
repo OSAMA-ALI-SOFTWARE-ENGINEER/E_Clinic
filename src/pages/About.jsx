@@ -1,12 +1,14 @@
 import CardAbout from "../components/CardAbout";
+import Footer from "../components/Footer";
 import Header from "../components/Header";
-import Title_section from "../ui/Title_section";
+import TitleSection from "../ui/TitleSection";
+// import Title_section from "../ui/Title_section";
 
 function about() {
   return (
     <>
       <Header />
-      <Title_section heading="About US" />
+      <TitleSection title={"Types of Treatment"} />
       <div>
         <h1 className="mb-6 text-center text-3xl font-bold sm:text-4xl ">
           Indro
@@ -26,6 +28,7 @@ function about() {
       <div>
         <CardAbout />
       </div>
+      <Footer />
     </>
   );
 }

@@ -8,14 +8,13 @@ const sharedClasses = {
   button: "bg-red-500 text-white py-2 px-4 rounded-lg",
 };
 
-function Title_section() {
+const TitleSection = ({ title }) => {
   return (
     <div
       className={`bg-gradient-to-r from-cyan-800 to-cyan-400 text-zinc-900 dark:bg-zinc-800 dark:text-zinc-100 ${sharedClasses.container} h-auto bg-cover bg-center sm:h-72 md:h-80`}
-      
     >
       <h1 className="mb-6 text-center text-3xl font-bold sm:text-4xl ">
-        Types of Treatment
+        {title}
       </h1>
 
       <div className="relative mb-6">
@@ -23,7 +22,7 @@ function Title_section() {
       </div>
       <p className="mb-12 text-center text-sm md:text-base">
         Here we provide multiple types of treatment options for different
-        conditions and health issues that may help you and your family's health.
+        conditions and health issues that may help you and your familys health.
       </p>
       <div className="mb-6 flex flex-col gap-4 md:flex-row">
         <button className="rounded bg-sky-500 px-4 py-2 text-white hover:bg-sky-600">
@@ -38,6 +37,6 @@ function Title_section() {
       </div>
     </div>
   );
-}
+};
 
-export default Title_section;
+export default TitleSection;

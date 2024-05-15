@@ -85,7 +85,7 @@ const App = () => {
           {/* 404 page */}
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </BrowserRouter>
     </QueryClientProvider>
   );
