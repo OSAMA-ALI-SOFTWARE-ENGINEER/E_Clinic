@@ -12,9 +12,10 @@ const DiseaseCategories = () => {
         disease categories
       </h2>
 
-      <div className="mx-auto grid w-full max-w-[1100px] grid-cols-1 justify-items-center gap-x-4 gap-y-8 sm:grid-cols-2 md:grid-cols-3 ">
+      <div className="mx-auto w-full max-w-[1100px] justify-items-center gap-x-4 gap-y-8 space-y-5 md:grid md:grid-cols-3 ">
         {Diseases?.map((cur, i) => i < 6 && <Card2 cur={cur} key={i} />)}
-        <button className="  col-span-3 justify-self-center rounded-md bg-gray-500 px-5 py-1.5 font-medium text-white shadow-xl">
+
+        <button className=" rounded-md  bg-gray-500 px-5 py-1.5 text-center font-medium text-white shadow-xl md:col-span-3 md:justify-self-center">
           see more
         </button>
       </div>

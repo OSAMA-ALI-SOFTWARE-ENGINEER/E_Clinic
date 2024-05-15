@@ -9,12 +9,12 @@ const AuthNav = () => {
 
   if (isLoading)
     return (
-      <div className=" ml-auto flex gap-2 pr-2">
+      <div className=" ml-0 flex gap-2 pr-2 sm:ml-auto">
         <div className="h-10 w-24 animate-pulse rounded-md bg-gray-100"></div>
       </div>
     );
   return (
-    <div className=" ml-auto   pr-4 ">
+    <div className=" order-2 ml-auto pr-4  md:order-none ">
       {isAuthenticated && !isLoading ? (
         <button
           disabled={isOuting}

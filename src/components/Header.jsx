@@ -6,6 +6,7 @@ import { XMarkIcon } from "@heroicons/react/24/outline";
 import Navbar from "./navbar/Navbar";
 import AuthNav from "./navbar/AuthNav";
 import Logo from "../ui/Logo";
+import Humburger from "../ui/Humburger";
 
 // import Logo from ""
 const links = [
@@ -18,16 +19,26 @@ const links = [
 ];
 
 const Header = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileNav, setMobileNav] = useState(false);
+  console.log(mobileNav);
 
   return (
-    <header className=" flex items-center justify-between  bg-zinc-300">
+    <header className=" flex h-24 items-center  justify-between bg-zinc-300">
       <Logo />
-      <Navbar />
+      <Humburger mobileNav={mobileNav} setMobileNav={setMobileNav} />
+
+      <Navbar mobileNav={mobileNav} />
       <AuthNav />
-      <Dialog
+    </header>
+  );
+};
+
+export default Header;
+
+{
+  /* <Dialog
         as="div"
-        className="block lg:hidden"
+        className=""
         open={mobileMenuOpen}
         onClose={setMobileMenuOpen}
       >
@@ -67,13 +78,9 @@ const Header = () => {
                 >
                   Subscribe
                 </a>
-              </div> */}
-            </div>
-          </div>
-        </Dialog.Panel>
-      </Dialog>
-    </header>
-  );
-};
-
-export default Header;
+              </div> */
+}
+//       </div>
+//     </div>
+//   </Dialog.Panel>
+// </Dialog> */}
