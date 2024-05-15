@@ -6,6 +6,7 @@ import ReviewCarousel from "../components/ReviewCarousel";
 import TreatmentTypes from "../components/TreatmentTypes";
 
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 function Home() {
   return (
@@ -88,6 +89,7 @@ function Home() {
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   );
 }

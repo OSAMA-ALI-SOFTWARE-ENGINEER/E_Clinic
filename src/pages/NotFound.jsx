@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../components/Header";
 import { useNavigate } from "react-router-dom";
+import Footer from "../components/Footer";
 
 const NotFoundPage = () => {
   const navigate = useNavigate();
@@ -25,6 +26,7 @@ const NotFoundPage = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   );
 };

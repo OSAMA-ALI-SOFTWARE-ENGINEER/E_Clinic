@@ -26,6 +26,14 @@ const TableData = () => {
     return <ErrorMessage>Something went wrong on the server.</ErrorMessage>;
   return (
     <>
+      <div className="mr-12 flex items-end justify-end self-end">
+        <Link
+          to={"/add-disease"}
+          className="rounded-md border border-none bg-cyan-500 hover:bg-cyan-700 px-6 my-4 py-2 font-medium capitalize text-black hover:text-white outline-none transition-all duration-300 hover:shadow-xl active:scale-90 disabled:cursor-not-allowed disabled:opacity-50"
+        >
+          Add +
+        </Link>
+      </div>
       <div className="overflow-x-auto">
         <table className="table">
           {/* head */}
@@ -83,12 +91,6 @@ const TableData = () => {
                       >
                         delete
                       </button>
-                      <Link
-                        to={"/add-disease"}
-                        className=" rounded-md bg-sky-400 px-6 py-1.5 capitalize hover:bg-sky-700 hover:text-white"
-                      >
-                        add
-                      </Link>
                     </th>
                   </tr>
                 );

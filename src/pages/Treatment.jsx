@@ -5,6 +5,7 @@ import TitleSection from "../ui/TitleSection";
 import doctorImage from '/doctor.png';
 import herbal from '/herbal.png'
 import tredational from '/tredational.png'
+import Footer from "../components/Footer";
 
 function Treatment() {
   return (
@@ -31,6 +32,7 @@ function Treatment() {
          img={tredational}
          /> 
       </div>
+      <Footer/>
     </>
   );
 }

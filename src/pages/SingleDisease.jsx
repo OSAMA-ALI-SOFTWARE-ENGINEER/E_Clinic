@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import { useSingleDisease } from "../components/singleDisease/useSingleDisease";
 import TitleSection from "../ui/TitleSection";
 import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
 
 const sharedClasses = {
   container: "w-full mx-auto px-4 py-8",
@@ -288,6 +289,8 @@ const SingleDisease = () => {
       })
     )}
   </div> */}
+
+  <Footer/>
     </>
   );
 };

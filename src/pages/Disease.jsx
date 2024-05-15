@@ -2,7 +2,7 @@ import React from "react";
 import DiseaseCategories from "../components/DiseaseCategories";
 import dises from "../assets/images/infectio disease.png";
 import Header from "../components/Header";
-
+import Footer from '../components/Footer';
 const Disease = () => {
   return (
     <>
@@ -13,6 +13,7 @@ const Disease = () => {
       <div className="container ">
         <DiseaseCategories para="Any disorder or malfunctioning of the body or mind that destroys good health can be called a disease. The status of health of the body in a disease is said to be compromised. A disease can be caused due to a variety of reasons. Every disease has characteristic symptoms through which we can identify the types of diseases" />
       </div>
+      <Footer />
     </>
   );
 };
