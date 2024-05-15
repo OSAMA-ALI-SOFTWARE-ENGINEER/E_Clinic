@@ -7,12 +7,6 @@ import toast from "react-hot-toast";
 import Sidebar from "./Sidebar";
 import Card from "./dashboardCards/Card";
 import { FcOpenedFolder, FcViewDetails,FcFeedback,FcBusinessContact } from "react-icons/fc";
-import {
-  HiFolder,
-  HiEnvelopeOpen,
-  HiIdentification,
-  HiMiniSquare2Stack
-} from "react-icons/hi2";
 import { useDiasease } from "../components/TreatementFilterSection/useDiseases";
 import { useSubscribers } from "../components/subscribers/useSubscribers";
 import Charts from "./Charts";
