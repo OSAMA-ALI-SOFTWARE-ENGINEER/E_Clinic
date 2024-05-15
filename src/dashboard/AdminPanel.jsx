@@ -6,11 +6,12 @@ import { useCurrentUser } from "../components/auth/useCurrentUser";
 import toast from "react-hot-toast";
 import Sidebar from "./Sidebar";
 import Card from "./dashboardCards/Card";
+import { FcOpenedFolder, FcViewDetails,FcFeedback,FcBusinessContact } from "react-icons/fc";
 import {
   HiFolder,
   HiEnvelopeOpen,
   HiIdentification,
-  HiMiniSquare2Stack,
+  HiMiniSquare2Stack
 } from "react-icons/hi2";
 import { useDiasease } from "../components/TreatementFilterSection/useDiseases";
 import { useSubscribers } from "../components/subscribers/useSubscribers";
@@ -57,28 +58,28 @@ const AdminPanel = () => {
         <div>
           <div className=" grid grid-cols-1 gap-3 bg-gray-100  p-6 sm:grid-cols-3 md:grid-cols-4">
             <Card
-              icon={<HiMiniSquare2Stack />}
+              icon={<FcViewDetails />}
               lable={"Total Disease"}
               value={totalDisease}
               loading={isLoadingDisease}
               error={diseaseError}
             />
             <Card
-              icon={<HiFolder />}
+              icon={<FcOpenedFolder />}
               lable={"total Categories"}
               value={totalCategories}
               loading={isLoadingDisease}
               error={diseaseError}
             />
             <Card
-              icon={<HiEnvelopeOpen />}
+              icon={<FcFeedback />}
               lable={"Total subscribtion"}
               value={totalSubs}
               loading={isLoadingSubs}
               error={subsError}
             />
             <Card
-              icon={<HiIdentification />}
+              icon={<FcBusinessContact />}
               lable={"Hey,"}
               value={adminName}
               loading={isLoading}
