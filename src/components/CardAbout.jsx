@@ -27,7 +27,7 @@ const WhatWeDoCard = ({ imageUrl, altText, title, description }) => {
     );
 };
 
-const TeamMemberCard = ({ imageUrl, altText, name, role }) => {
+const TeamMemberCard = ({ imageUrl, altText, name, role, Contact }) => {
     return (
         
         <div className="w-full md:w-64 md:flex-shrink-0 md:mr-4 mb-4 relative">
@@ -35,6 +35,7 @@ const TeamMemberCard = ({ imageUrl, altText, name, role }) => {
             <div className={`${teamCardClasses} absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white px-4 py-2`}>
                 <h3 className={`${textClasses} text-center md:text-left`}>{name}</h3>
                 <p className={`${paragraphClasses} text-center md:text-left `}>{role}</p>
+                <p className={`${paragraphClasses} text-center md:text-left `}>{Contact}</p>
                 <div className={`${socialIconClasses} text-center md:text-left`}>
                     <a href="#" className={socialLinkClasses}><i className="fab fa-facebook-f"></i></a>
                     <a href="#" className={socialLinkClasses}><i className="fab fa-twitter"></i></a>
@@ -47,7 +48,7 @@ const TeamMemberCard = ({ imageUrl, altText, name, role }) => {
 
 
 
-const CardAbout = () => {
+const CardAbout = (prop) => {
   return (
     <div className="text-zinc-100 font-sans leading-normal tracking-normal">
       <div className="containe bg-black mx-auto px-4">
@@ -55,16 +56,16 @@ const CardAbout = () => {
           <h2 className="text-3xl text-center text-zinc-100 font-bold mb-8">WHO WE SERVE</h2>
           <div className="flex text-zinc-100 flex-wrap justify-center gap-4">
             <WhoWeServeCard 
-                title="BIOMEDICAL"
-                description="We provide technical support and expertise for medical device manufacturers, helping to ensure devices are safe and effective for clinical use."
+                title="Medical Research Support"
+                description="Partnering with research institutions, we offer technology solutions to facilitate groundbreaking medical research and drive advancements in healthcare."
             />
             <WhoWeServeCard
-                title="HOME HEALTHCARE"
-                description="Supporting home healthcare providers with the latest in medical technology, ensuring patient safety and improving the quality of care."
+                title="Community Health Support"
+                description="Supporting community health organizations with tailored technology solutions to empower local health initiatives and foster wellness."
             />
             <WhoWeServeCard
-                title="SURGERY CENTERS"
-                description="Offering comprehensive technology solutions and support to surgery centers to enhance operational efficiency and patient safety."
+                title=" Healthcare Knowledge Hub"
+                description="We specialize in providing advanced technology and support for medical information portals, ensuring accurate and reliable health information for professionals and the public."
             />
           </div>
         </div>
@@ -73,22 +74,22 @@ const CardAbout = () => {
           <h2 className="text-3xl text-center text-zinc-100 font-bold mb-8">What We Do</h2>
           <div className="flex flex-wrap justify-center gap-4">
             <WhatWeDoCard
-                imageUrl="https://placehold.co/300x200"
+                imageUrl="/Options.jpeg"
                 altText="On-site maintenance"
-                title="ON-SITE MAINTENANCE"
-                description="Ensuring the operational safety and efficiency of medical equipment with expert on-site maintenance."
+                title="Centralized Health Hub"
+                description="Our platform serves as a centralized hub for comprehensive health information and treatment solutions. We provide users with access to a vast array of reliable health resources, empowering them to make informed decisions about their well-being."
             />
             <WhatWeDoCard
-                imageUrl="https://placehold.co/300x200"
+                imageUrl="/Health.jpeg"
                 altText="Sales & Rentals"
-                title="SALES & RENTALS"
-                description="Comprehensive sales and rental services for the latest and most reliable medical equipment."
+                title="Diverse Treatment Options"
+                description="We offer a range of treatment modalities, including conventional medical treatments and alternative therapies. From herbal remedies to Chinese traditional medicine, our solutions cater to diverse health needs and preferences."
             />
             <WhatWeDoCard
-                imageUrl="https://placehold.co/300x200"
+                imageUrl="/teach.jpeg"
                 altText="Electrical Safety"
-                title="ELECTRICAL SAFETY"
-                description="Certified electrical safety inspections to ensure compliance and safety of your medical equipment."
+                title="  Healthcare Technology"
+                description="We specialize in providing innovative technology solutions for healthcare organizations. From medical device support to data management systems, our solutions are designed to enhance operational efficiency and improve patient care."
             />
           </div>
         </div>
@@ -98,22 +99,25 @@ const CardAbout = () => {
         <h2 className="text-3xl text-zinc-900 font-bold mb-8">Our Team</h2>
         <div className="flex flex-wrap justify-center gap-4">
           <TeamMemberCard
-              imageUrl="https://placehold.co/300x400"
+              imageUrl="/Bilal.png"
               altText="Bilal Khan"
               name="Bilal Khan"
-              role="Founder & CEO"
+              role="full stack web developer "
+              Contact="(+92)317-9760801"
           />
           <TeamMemberCard
-              imageUrl="https://placehold.co/300x400"
+              imageUrl="/osama.jpg"
               altText="Osama Ali"
               name="Osama Ali"
-              role="Technical Lead"
+              role="full stack web developer"
+              Contact="(+92)348-5033323"
           />
           <TeamMemberCard
-              imageUrl="https://placehold.co/300x400"
-              altText="M. Imaz"
-              name="M. Imaz"
-              role="Operations Manager"
+              imageUrl="/m.maaz.png"
+              altText="M. Maaz"
+              name="M.Maaz"
+              role="full stack web developer"
+              Contact="(+92)349-7435278"
           />
         </div>
       </div>
