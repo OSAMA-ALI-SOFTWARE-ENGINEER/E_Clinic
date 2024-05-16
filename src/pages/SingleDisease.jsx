@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Header from "../components/Header";
 
 import { useSingleDisease } from "../components/singleDisease/useSingleDisease";
-import TitleSection from "../ui/TitleSection";
+
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 
@@ -20,6 +20,11 @@ const SingleDisease = () => {
   const [causes, setCauses] = useState(false);
   const [prevention, setPrevention] = useState(false);
   const [treatment, setTreatment] = useState(false);
+
+  const [herbal, setHerbal] = useState(false);
+  const [homopathic, setHomopathic] = useState(false);
+  const [doctor, setDoctor] = useState(false);
+  const [chinese, setChinese] = useState(false);
   const { Disease, isLoadingDisease, isError } = useSingleDisease();
   if (isLoadingDisease) return <p>loading...</p>;
   if (isError) return <p>Error</p>;
@@ -61,6 +66,31 @@ const SingleDisease = () => {
     setSymptoms(false);
     setCauses(false);
     setPrevention((show) => !show);
+  }
+
+  function handleHerbal() {
+    setHerbal(true);
+    setHomopathic(false);
+    setDoctor(false);
+    setChinese(false);
+  }
+  function handleHomopathic() {
+    setHomopathic(true);
+    setDoctor(false);
+    setChinese(false);
+    setHerbal(false);
+  }
+  function handleDoctor() {
+    setDoctor(true);
+    setHomopathic(false);
+    setChinese(false);
+    setHerbal(false);
+  }
+  function handleChinese() {
+    setChinese(true);
+    setHomopathic(false);
+    setDoctor(false);
+    setHerbal(false);
   }
   return (
     <>
@@ -124,7 +154,7 @@ const SingleDisease = () => {
         <div className=" grid grid-cols-1 items-start gap-y-6 px-4 py-24 md:grid-cols-2 md:gap-y-0">
           <div className="static  flex flex-col items-center justify-center gap-3 md:sticky md:top-0 ">
             <img
-              className=" w-[80%] rounded-lg object-cover"
+              className=" w-[60%] rounded-lg object-cover"
               src={Disease.image && Disease.image}
               alt=""
             />
@@ -148,10 +178,62 @@ const SingleDisease = () => {
               <h3 className=" mb-6 text-xl font-bold capitalize text-stone-700">
                 treatment
               </h3>
-              <div
-                className=" space-y-5 "
-                dangerouslySetInnerHTML={{ __html: Disease.treatment }}
-              />
+
+              <div role="tablist" className="tabs-boxed tabs mb-8">
+                <button
+                  onClick={handleHerbal}
+                  role="tab"
+                  className={`tab ${herbal && "tab-active"} `}
+                >
+                  herbal
+                </button>
+                <button
+                  onClick={handleHomopathic}
+                  role="tab"
+                  className={`tab ${homopathic && "tab-active"} `}
+                >
+                  homopathic
+                </button>
+                <button
+                  onClick={handleDoctor}
+                  role="tab"
+                  className={`tab ${doctor && "tab-active"} `}
+                >
+                  doctor
+                </button>
+                <button
+                  onClick={handleChinese}
+                  role="tab"
+                  className={`tab ${chinese && "tab-active"} `}
+                >
+                  chinese
+                </button>
+              </div>
+
+              {herbal && (
+                <div
+                  className=" space-y-5 "
+                  dangerouslySetInnerHTML={{ __html: Disease.herbal }}
+                />
+              )}
+              {homopathic && (
+                <div
+                  className=" space-y-5 "
+                  dangerouslySetInnerHTML={{ __html: Disease.homopathic }}
+                />
+              )}
+              {doctor && (
+                <div
+                  className=" space-y-5 "
+                  dangerouslySetInnerHTML={{ __html: Disease.doctor }}
+                />
+              )}
+              {chinese && (
+                <div
+                  className=" space-y-5 "
+                  dangerouslySetInnerHTML={{ __html: Disease.chinese }}
+                />
+              )}
             </div>
           )}
           {symptoms && (
@@ -290,7 +372,7 @@ const SingleDisease = () => {
     )}
   </div> */}
 
-  <Footer/>
+      <Footer />
     </>
   );
 };
