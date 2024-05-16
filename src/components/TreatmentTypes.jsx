@@ -20,7 +20,7 @@ const treatmentTypes = [
     desc:'Lorem ipsum dolor sit amet consectetur adipt mollitia. Dolorum, at fugiat enim temporibus neque totam blanditiis voluptatum, accusantium et voluptates accusamus eos aperiam dolore'
   },
   {
-    img: '/tredational.png',
+    img: '/homopathic.png',
     name:'Homopathic treatment',
     desc:'Lorem ipsum dolor sit amet tatem provident mollitia. Dolorum, at fugiat enim temporibus neque totam blanditiis voluptatum, accusantium et voluptates accusamus eos aperiam dolore'
   },

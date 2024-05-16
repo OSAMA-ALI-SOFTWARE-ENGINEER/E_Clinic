@@ -12,7 +12,8 @@ const Card2 = ({ cur }) => {
       </figure>
       <div className="card-body">
         <h2 className="card-title text-black">{cur.name?.slice(0, 20)}...</h2>
-        <p>{cur.overview?.slice(0, 70)}...</p>
+        {/* <p>{cur.overview?.slice(0, 70)}...</p> */}
+        <div dangerouslySetInnerHTML={{__html:cur.overview.slice(0,70)}}/>
         <div className="card-actions justify-center">
           <button className="btn bg-sky-400 text-black hover:bg-sky-800 hover:text-white">
             Learn more{" "}
