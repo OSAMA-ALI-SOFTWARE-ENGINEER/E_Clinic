@@ -41,7 +41,8 @@ const TableData = () => {
             <tr>
               <th></th>
               <th>Picture</th>
-              <th>Disease name</th>
+              <th>Disease Name</th>
+              <th>Category Name</th>
               <th>Actions</th>
               <th></th>
             </tr>
@@ -74,6 +75,9 @@ const TableData = () => {
                     </td>
                     <td>
                       <p>{cur.name}</p>
+                    </td>
+                    <td>
+                      <p>{cur.category}</p>
                     </td>
 
                     <th className=" flex items-center gap-2">

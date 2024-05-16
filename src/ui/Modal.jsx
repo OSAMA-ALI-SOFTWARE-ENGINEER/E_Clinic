@@ -142,12 +142,84 @@ const Modal = ({ setShowModal, editID }) => {
               )}
             />
           </FormRow>
-          {/* Disease Symptoms */}
+
+          {/* Disease Treatment */}
           <FormRow lable={"Disease Treatment"}>
             <Controller
               name="treatment" // Set the name for React Hook Form
               control={control}
               defaultValue={Disease?.treatment}
+              // disabled={isAdding}
+              render={({ field }) => (
+                <ReactQuill
+                  modules={module}
+                  value={field.value}
+                  onChange={(value) => field.onChange(value)}
+                  className=" rounded-xl border-none bg-gray-100 shadow-xl outline-none disabled:cursor-not-allowed disabled:bg-cyan-500"
+                />
+              )}
+            />
+          </FormRow>
+
+          {/* Disease Doctor Treatment */}
+          <FormRow lable={"Disease Doctor Treatment"}>
+            <Controller
+              name="doctor" // Set the name for React Hook Form
+              control={control}
+              defaultValue={Disease?.doctor}
+              // disabled={isAdding}
+              render={({ field }) => (
+                <ReactQuill
+                  modules={module}
+                  value={field.value}
+                  onChange={(value) => field.onChange(value)}
+                  className=" rounded-xl border-none bg-gray-100 shadow-xl outline-none disabled:cursor-not-allowed disabled:bg-cyan-500"
+                />
+              )}
+            />
+          </FormRow>
+
+          {/* Disease Homopathic Treatment */}
+          <FormRow lable={"Disease Homopathic"}>
+            <Controller
+              name="homopathic" // Set the name for React Hook Form
+              control={control}
+              defaultValue={Disease?.homopathic}
+              // disabled={isAdding}
+              render={({ field }) => (
+                <ReactQuill
+                  modules={module}
+                  value={field.value}
+                  onChange={(value) => field.onChange(value)}
+                  className=" rounded-xl border-none bg-gray-100 shadow-xl outline-none disabled:cursor-not-allowed disabled:bg-cyan-500"
+                />
+              )}
+            />
+          </FormRow>
+
+          {/* Disease Chinese treatment */}
+          <FormRow lable={"Disease Chinese"}>
+            <Controller
+              name="chinese" // Set the name for React Hook Form
+              control={control}
+              defaultValue={Disease?.chinese}
+              // disabled={isAdding}
+              render={({ field }) => (
+                <ReactQuill
+                  modules={module}
+                  value={field.value}
+                  onChange={(value) => field.onChange(value)}
+                  className=" rounded-xl border-none bg-gray-100 shadow-xl outline-none disabled:cursor-not-allowed disabled:bg-cyan-500"
+                />
+              )}
+            />
+          </FormRow>
+          {/* Disease Herbal treatment */}
+          <FormRow lable={"Disease Herbal"}>
+            <Controller
+              name="herbal" // Set the name for React Hook Form
+              control={control}
+              defaultValue={Disease?.herbal}
               // disabled={isAdding}
               render={({ field }) => (
                 <ReactQuill
