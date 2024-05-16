@@ -8,7 +8,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import { useAddSubscriber } from "./subscribers/useAddSubsriber";
-
+import About from "../pages/About";
 const Footer = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -32,7 +32,7 @@ const Footer = () => {
   return (
     <>
       {/* Subscription Container */}
-      <div className="px-18 mt-8 mx-24 flex justify-between rounded-lg border bg-base-200 p-6 ">
+      <div className="px-18 mx-24 mt-8 flex justify-between rounded-lg border bg-base-200 p-6 ">
         <div className="justify-start ">
           <h2 className="text-2xl text-secondary">
             Join Our Community For More Updates
@@ -104,19 +104,20 @@ const Footer = () => {
         </aside>
         <nav>
           <h6 className="footer-title">Disease Types</h6>
-          <a className="link-hover link" to="#">
+          <Link className="link-hover link" to={'/DiseaseSearch'} >
             Heart Disease
-          </a>
-          <a className="link-hover link">Kedney Disease</a>
-          <a className="link-hover link">ENT Disease</a>
-          <a className="link-hover link">Cancer Disease</a>
+          </Link>
+          <Link className="link-hover link"  to={'/DiseaseSearch'}>Kedney Disease</Link>
+          <Link className="link-hover link" to={'/DiseaseSearch'}>ENT Disease</Link>
+          <Link className="link-hover link" to={'/DiseaseSearch'}>Cancer Disease</Link>
+          <Link className="link-hover link" to={'/DiseaseSearch'}>Skin Disease</Link>
         </nav>
         <nav>
           <h6 className="footer-title">Treatment Types</h6>
-          <a className="link-hover link">Doctor Treatment</a>
-          <a className="link-hover link">Herbal Treatment</a>
-          <a className="link-hover link">Traditional Treatement</a>
-          <a className="link-hover link">Homeopathic Treatment</a>
+          <Link className="link-hover link" to={'/About'}>Herbal Treatment</Link>
+          <Link className="link-hover link" to={'/About'}>Doctor Treatment</Link>
+          <Link className="link-hover link" to={'/About'}>Chinese Treatement</Link>
+          <Link className="link-hover link" to={'/About'}>Homopathic Treatment</Link>
         </nav>
         <nav>
           <h6 className="footer-title">Legal</h6>

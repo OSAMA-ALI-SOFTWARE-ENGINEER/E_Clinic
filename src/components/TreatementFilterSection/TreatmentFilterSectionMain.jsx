@@ -4,6 +4,7 @@ import Content from "./Content";
 import FilterButtons from "./FilterButtons";
 import { useDiasease } from "./useDiseases";
 import Header from "../Header";
+import Footer from "../Footer";
 import AllDiseases from "./AllDiseases";
 
 const TreatmentFilterSection = () => {
@@ -31,6 +32,7 @@ const TreatmentFilterSection = () => {
       </div>
 
       <AllDiseases searchInput={searchInput} />
+      <Footer />
     </>
   );
 };

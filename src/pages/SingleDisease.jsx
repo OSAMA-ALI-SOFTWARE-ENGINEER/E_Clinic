@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 import { useSingleDisease } from "../components/singleDisease/useSingleDisease";
 
 import { Link } from "react-router-dom";
-import Footer from "../components/Footer";
 
 const sharedClasses = {
   container: "w-full mx-auto px-4 py-8",
@@ -151,6 +151,9 @@ const SingleDisease = () => {
             </Link>
           </div>
         </div>
+
+
+        {/* Main Layout Design */}
         <div className=" grid grid-cols-1 items-start gap-y-6 px-4 py-24 md:grid-cols-2 md:gap-y-0">
           <div className="static  flex flex-col items-center justify-center gap-3 md:sticky md:top-0 ">
             <img
@@ -162,6 +165,7 @@ const SingleDisease = () => {
               {Disease.name}
             </h2>
           </div>
+          {/* Preview Disease Data */}
           {overview && (
             <div>
               <h3 className=" mb-6 text-xl font-bold capitalize text-stone-700">
@@ -179,34 +183,34 @@ const SingleDisease = () => {
                 treatment
               </h3>
 
-              <div role="tablist" className="tabs-boxed tabs mb-8">
+              <div role="tablist" className="tabs-boxed tabs bg-sky-400 mb-8">
                 <button
                   onClick={handleHerbal}
                   role="tab"
                   className={`tab ${herbal && "tab-active"} `}
                 >
-                  herbal
+                  Herbal
                 </button>
                 <button
                   onClick={handleHomopathic}
                   role="tab"
                   className={`tab ${homopathic && "tab-active"} `}
                 >
-                  homopathic
+                  Homopathic
                 </button>
                 <button
                   onClick={handleDoctor}
                   role="tab"
                   className={`tab ${doctor && "tab-active"} `}
                 >
-                  doctor
+                  Doctor
                 </button>
                 <button
                   onClick={handleChinese}
                   role="tab"
                   className={`tab ${chinese && "tab-active"} `}
                 >
-                  chinese
+                  Chinese
                 </button>
               </div>
 
@@ -271,106 +275,7 @@ const SingleDisease = () => {
           )}
         </div>
       </div>
-      {/* <div className=" bg-white p-8">
-    <h2 className=" text-2xl font-bold uppercase text-gray-900  underline">
-      {btnContent}
-    </h2>
-    {isLoading ? (
-      <p>loading...</p>
-    ) : (
-      Diseases?.map((item,_i) => {
-
-        return (
-          <div className="" key={item.id}>
-            <div className="collapse collapse-arrow bg-base-200">
-              <input type="radio" name="my-accordion-2" />
-              <div className="collapse-title text-xl font-medium">
-                <h2 className="text-xl font-bold">{item.name}</h2>
-              </div>
-              <div className="collapse-content">
-                <div dangerouslySetInnerHTML={{ __html: item.content }} /> */}
-
-      {/* Tabs start here */}
-      {/* <div role="tablist" className="tabs tabs-lifted"> */}
-      {/* Overview Tab */}
-      {/* <input
-                    type="radio"
-                    name="my_tabs_2"
-                    role="tab"
-                    className="tab"
-                    aria-label="Overview"
-                    checked
-                  />
-                  <div
-                    role="tabpanel"
-                    aria-label="Symptoms"
-                    className="tab-content rounded-box border-red-300 bg-base-100 p-6"
-                    dangerouslySetInnerHTML={{ __html: item.overview }}
-                  /> */}
-
-      {/* Symptoms Tab */}
-      {/* <input
-                    type="radio"
-                    name="my_tabs_2"
-                    role="tab"
-                    className="tab"
-                    aria-label="Symptoms"
-                  />
-                  <div
-                    role="tabpanel"
-                    className="tab-content rounded-box border-red-300 bg-base-100 p-6"
-                    dangerouslySetInnerHTML={{ __html: item.symptoms }}
-                  /> */}
-
-      {/* Causes Tab */}
-      {/* <input
-                    type="radio"
-                    name="my_tabs_2"
-                    role="tab"
-                    className="tab"
-                    aria-label="Causes"
-                  />
-                  <div
-                    role="tabpanel"
-                    className="tab-content rounded-box border-red-300 bg-base-100 p-6"
-                    dangerouslySetInnerHTML={{ __html: item.causes }}
-                  /> */}
-
-      {/* Prevention Tab */}
-      {/* <input
-                    type="radio"
-                    name="my_tabs_2"
-                    role="tab"
-                    className="tab"
-                    aria-label="Prevention"
-                  />
-                  <div
-                    role="tabpanel"
-                    className="tab-content rounded-box border-red-300 bg-base-100 p-6"
-                    dangerouslySetInnerHTML={{ __html: item.prevention }}
-                  /> */}
-
-      {/* Treatment Tab  */}
-      {/* <input
-                    type="radio"
-                    name="my_tabs_2"
-                    role="tab"
-                    className="tab"
-                    aria-label="Treatment"
-                  />
-                  <div
-                    role="tabpanel"
-                    className="tab-content rounded-box border-red-300 bg-base-100 p-6"
-                    dangerouslySetInnerHTML={{ __html: item.treatment }}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        );
-      })
-    )}
-  </div> */}
+    
 
       <Footer />
     </>
