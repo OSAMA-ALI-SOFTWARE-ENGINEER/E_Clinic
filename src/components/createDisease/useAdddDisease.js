@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 export function useAddDisease() {
   const queryClient = useQueryClient();
   const { mutate: addDisease, isPending: isAdding } = useMutation({
-    mutationFn: (newdisease) => addDiseaseApi(newdisease),
+    mutationFn: addDiseaseApi,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["Diseases"] });
       toast.success(" Disease added successfully.");
