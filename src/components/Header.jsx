@@ -2,9 +2,15 @@ import React from "react";
 // import { Link } from 'react-router-dom';
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { XMarkIcon } from "@heroicons/react/24/outline";
+import Navbar from "./navbar/Navbar";
+import AuthNav from "./navbar/AuthNav";
+import Logo from "../ui/Logo";
+import Humburger from "../ui/Humburger";
 
+// import Logo from ""
 const links = [
+  { to: "/dashboard", name: "Dashboard" },
   { to: "/", name: "Home" },
   { to: "/disease", name: "Disease" },
   { to: "/treatment", name: "Treatment" },
@@ -13,56 +19,26 @@ const links = [
 ];
 
 const Header = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileNav, setMobileNav] = useState(false);
+  console.log(mobileNav);
+
   return (
-    <header className=" bg-zinc-300">
-      <nav
-        className="flex items-center justify-between p-6 lg:px-8"
-        aria-label="Global"
-      >
-        <div className="flex lg:flex-1">
-          <a href="/" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
-            <img
-              className="h-8 w-auto"
-              src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-              alt=""
-            />
-          </a>
-        </div>
-        <div className="flex lg:hidden">
-          <button
-            type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-            onClick={() => setMobileMenuOpen(true)}
-          >
-            <span className="sr-only">Open main menu</span>
-            <Bars3Icon className="h-6 w-6" aria-hidden="true" />
-          </button>
-        </div>
-        <div className="hidden lg:flex lg:gap-x-12">
-          {links.map((item) => (
-            <a
-              key={item.name}
-              href={item.to}
-              className="text-sm  font-semibold leading-6 text-gray-900"
-            >
-              {item.name}
-            </a>
-          ))}
-        </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a
-            href="#"
-            className="flex text-sm items-center justify-center bg-cyan-300 rounded-lg w-24  hover:bg-cyan-500 h-9 font-semibold leading-6 text-gray-900"
-          >
-            Subscribe <span aria-hidden="true">&rarr;</span>
-          </a>
-        </div>
-      </nav>
-      <Dialog
+    <header className=" flex h-24 items-center  justify-between bg-zinc-300">
+      <Logo />
+      <Humburger mobileNav={mobileNav} setMobileNav={setMobileNav} />
+
+      <Navbar mobileNav={mobileNav} />
+      <AuthNav />
+    </header>
+  );
+};
+
+export default Header;
+
+{
+  /* <Dialog
         as="div"
-        className="lg:hidden"
+        className=""
         open={mobileMenuOpen}
         onClose={setMobileMenuOpen}
       >
@@ -70,12 +46,8 @@ const Header = () => {
         <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <a href="" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
-              <img
-                className="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                alt=""
-              />
+              <span className="sr-only">E_Clinic</span>
+              <img className="h-8 w-auto" src="/Logo.png" alt="Logo" />
             </a>
             <button
               type="button"
@@ -99,20 +71,16 @@ const Header = () => {
                   </a>
                 ))}
               </div>
-              <div className="py-6">
+              {/* <div className="py-6">
                 <a
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Subscribe
                 </a>
-              </div>
-            </div>
-          </div>
-        </Dialog.Panel>
-      </Dialog>
-    </header>
-  );
-};
-
-export default Header;
+              </div> */
+}
+//       </div>
+//     </div>
+//   </Dialog.Panel>
+// </Dialog> */}
